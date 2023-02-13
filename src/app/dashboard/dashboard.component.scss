@@ -1,9 +1,8 @@
 .all {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    // ombre
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    align-items: center;
+    background-color: white;
+    text-align: center;
+    margin: 20px auto;
 
     .title {
         font-size: 1.1em;

@@ -5,7 +5,9 @@ export class Offre {
         public description: string,
         public dateDebut: Date,
         public dateFin: Date,
-        public salaire: number,
+        public salary: number,
+        public type: string,
+        public place: string,
         
     ){
     }

@@ -19,7 +19,9 @@ export class OffresService {
               description: 'Nous recherchons un développeur Angular pour un projet de 3 mois',
               dateDebut: new Date('2020-01-01'),
               dateFin: new Date('2020-01-01'),
-              salaire: 3000,
+              type: 'CDI',
+              place: 'Paris',
+              salary: 3000,
             },
             {
               id: 2,
@@ -27,16 +29,18 @@ export class OffresService {
               description: 'Nous recherchons un développeur React pour un projet de 3 mois',
               dateDebut: new Date('2020-01-01'),
               dateFin: new Date('2020-01-01'),
-              salaire: 3000,
-            },
+              type: 'CDI',
+              place: 'Paris',
+              salary: 3000,            },
             {
               id: 3,
               titre: 'Développeur Vue',
               description: 'Nous recherchons un développeur Vue pour un projet de 3 mois',
               dateDebut: new Date('2020-01-01'),
               dateFin: new Date('2020-01-01'),
-              salaire: 3000,
-            }
+              type: 'CDI',
+              place: 'Paris',
+              salary: 3000,            }
         ];
 
     // getAllOffres(): Observable<Offre[]> {
