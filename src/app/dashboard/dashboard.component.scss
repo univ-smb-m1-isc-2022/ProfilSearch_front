@@ -1,0 +1,24 @@
+.all {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    // ombre
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .title {
+        font-size: 1.1em;
+        background-color: #e6e7ea;
+        color: #607D8B;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        font-size: 40px;
+        padding:10px;
+        width: 90%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+}

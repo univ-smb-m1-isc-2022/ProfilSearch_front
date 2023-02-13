@@ -1,0 +1,32 @@
+.header {
+    background-color: #2764ac;
+    color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    // text-align: center;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    .login_button {
+        background-color: #fff;
+        color: #2764ac;
+        border: 1px solid #2764ac;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: black;
+            color: #fff;
+        }
+    }
+}
+
