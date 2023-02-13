@@ -17,14 +17,6 @@ export class OffreComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.offre = {
-      id: 1,
-      titre: 'Développeur Angular',
-      description: 'Nous recherchons un développeur Angular pour un projet de 3 mois',
-      dateDebut: new Date('2020-01-01'),
-      dateFin: new Date('2020-01-01'),
-      salaire: 3000,
-    };
   }
 
 }
