@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OffreComponent } from './offre/offre.component';
 import { OffrelistComponent } from './offrelist/offrelist.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
