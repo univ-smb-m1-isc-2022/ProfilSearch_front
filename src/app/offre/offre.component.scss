@@ -10,8 +10,9 @@
   width: 100%;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin: 2rem 0 2rem 0;
   &:hover{
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
   }
   .job-offer__image {
     width: 100px;
