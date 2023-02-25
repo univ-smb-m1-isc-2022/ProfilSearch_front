@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OffreComponent } from './offre/offre.component';
 import { OffrelistComponent } from './offrelist/offrelist.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
+import { PageOffreComponent } from './page-offre/page-offre.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.compo
     NavbarComponent,
     OffreComponent,
     OffrelistComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    PageOffreComponent
   ],
   imports: [
     BrowserModule,
