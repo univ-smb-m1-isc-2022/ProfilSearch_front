@@ -5,9 +5,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageOffreComponent } from './page-offre/page-offre.component';
 
 const routes: Routes = [
-  { path: '', component : DashboardComponent },
-  { path: 'admin', component : DashboardAdminComponent },
-  { path: 'offre', component : PageOffreComponent },
+  { 
+    path: '', 
+    component : DashboardComponent,
+    data: { animation: 'HomePage' }
+  },
+  { 
+    path: 'admin', 
+    component : DashboardAdminComponent,
+    data: { animation: 'AdminPage' }
+  },
+  { 
+    path: 'offre', 
+    component : PageOffreComponent ,
+    data : { animation: 'OffrePage' }
+  },
 ];
 
 @NgModule({
