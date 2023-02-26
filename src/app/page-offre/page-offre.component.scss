@@ -12,6 +12,8 @@ section {
         .left-container{
             width: 30%;
             .content {
+                margin-left: 2rem;
+                margin-right: 2rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -39,6 +41,8 @@ section {
                 }
             }
             .button{
+                margin-left: 2rem;
+                margin-right: 2rem;
                 width: fit-content;
                 margin-top: 2rem;
                 background-color: var(--color-red);

@@ -10,18 +10,26 @@
     width: 100%;
     .title {
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
         width: 80%;
         // height: 100px;
         padding:10px;
         color: black;
-        border-bottom: 0.2px solid grey;
+        border-bottom: 1px solid var(--color-lg-red);
         margin-bottom: 0;
         padding-bottom: 0;
-        font-size: 2rem;
         font-weight: 700;
-        // background-color: #e6e7ea;
+        h1{
+            font-size: var(--font-size-xxl);
+        }
+        p{
+            font-size: var(--font-size-xl);
+        }
     }
-    
+    .offre-list{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 }

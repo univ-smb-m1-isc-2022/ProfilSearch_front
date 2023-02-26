@@ -10,6 +10,7 @@ import { OffreComponent } from './offre/offre.component';
 import { OffrelistComponent } from './offrelist/offrelist.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import { PageOffreComponent } from './page-offre/page-offre.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PageOffreComponent } from './page-offre/page-offre.component';
     OffreComponent,
     OffrelistComponent,
     DashboardAdminComponent,
-    PageOffreComponent
+    PageOffreComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
