@@ -16,8 +16,8 @@ export class OffresService {
         return this.http.get<Offre[]>('http://localhost:8080/profilsearch/offre/all');
     }
 
-    // getOffreById(id: number): Observable<Offre> {
-    //     return this.http.get<Offre>(``);
-    // }
+    getOffreById(id : string): Observable<Offre> {
+        return this.http.get<Offre>('http://localhost:8080/profilsearch/offre/' + id);
+    }
 
 }

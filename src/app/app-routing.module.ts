@@ -23,7 +23,7 @@ const routes: Routes = [
     data: { animation: 'AdminPage' }
   },
   { 
-    path: 'offre', 
+    path: 'offre/:id', 
     component : PageOffreComponent ,
     data : { animation: 'OffrePage' }
   },

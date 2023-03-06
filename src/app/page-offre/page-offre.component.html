@@ -4,12 +4,13 @@
             <div class="content">
                 <div class="offre-title">
                     <span>Le poste</span>
-                    <h3>Développeur Web (NodeJS)</h3>
+                    <h3>{{ offre.name }}</h3>
                 </div>
                 <div class="offre-infos">
-                    <span class="offre-type">CDI</span>
-                    <span class="offre-place">Lyon, 69000</span>
-                    <span class="offre-published">Publiée le 12/12/23</span>
+                    <span class="offre-salary">{{ offre.salary }}€</span>
+                    <span class="offre-type">{{ offre.type }}</span>
+                    <span class="offre-place">{{ offre.place }}</span>
+                    <span class="offre-published">Publiée le {{ offre.creation_date }}</span>
                 </div>
             </div>
             <div class="button">
@@ -20,9 +21,7 @@
             <div class="content">
                 <h1>Description du poste</h1>
                 <div class="offre-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper nec ipsum ac efficitur. Curabitur vel pellentesque magna. Aliquam sem ante, egestas in molestie eu, pretium non ipsum. Morbi aliquam tristique ultricies. Aliquam sed neque leo. Aliquam rhoncus pretium ex, iaculis mattis magna fermentum ut. Sed id magna sit amet est sollicitudin dictum. Etiam gravida enim augue, vitae consequat dui fringilla a. Etiam sit amet pellentesque enim. Praesent non purus diam. Nulla tristique diam massa, vitae luctus turpis ultricies luctus. Donec molestie eu dolor sit amet malesuada. In hac habitasse platea dictumst. Mauris malesuada ut mi et feugiat. Nunc ac augue elementum, elementum quam vel, accumsan lorem. Morbi consequat erat quis pretium rutrum.
-                    Vivamus convallis sit amet sem a auctor. Donec sodales interdum sodales. Nam leo massa, imperdiet at orci sit amet, finibus feugiat erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi id interdum ipsum. Vestibulum ut mattis mi, quis sagittis diam. Maecenas bibendum mollis sagittis.
-                    Etiam blandit ipsum ac ex efficitur varius. Pellentesque dignissim magna sit amet molestie ultrices. Duis hendrerit risus ac nulla finibus vehicula. Nulla consectetur neque sed mauris fringilla mattis. Etiam tortor nunc, euismod eu ornare vitae, congue id metus. Aenean pretium ultricies odio vitae posuere. Praesent eu magna id purus fermentum accumsan ut nec nisi. Proin feugiat sit amet nulla ac accumsan. Phasellus quis tempor augue. Donec interdum posuere metus, id aliquet nulla commodo in.
+                    <p>{{ offre.description }}</p>
                 </div>
                 <div class="offre-questions">
                     <div class="infos-perso">

@@ -1,17 +1,17 @@
-<div class="job-offer" routerLink="/offre">
+<div class="job-offer" routerLink="/offre/{{offre.id}}">
     <div class="job-offer__image">
       <img src="https://scontent-cdg2-1.xx.fbcdn.net/v/t31.18172-8/1496373_903318573036292_2170516332431007144_o.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=p4nzlUK6JTQAX_Y3a_s&_nc_ht=scontent-cdg2-1.xx&oh=00_AfDq9xnuCM9l4muuXaLa0fv6P1HT3OKyH0jVr3HHAz0OmA&oe=64117EAF" alt="Job offer">
     </div>
     <div class="job-offer__info">
       <div class="job-offer__title">
         <h3 class="job-title">{{offre.name}}</h3>
-        <p>Disponible depuis le 25/02/23</p>
+        <p>Disponible depuis le {{ offre.dateDebut }}</p>
       </div>
       <h3 class="job-offer__title">{{offre.name}}</h3>
       <div class="job-offer__details">
         <div class="job-offer__type">Type : {{offre.type}}</div>
         <div class="job-offer__salary">Salaire : {{offre.salary}}€</div>
-        <div class="job-offer__date">Date : Février 2023</div>
+        <div class="job-offer__date">Date : {{ offre.creation_date }}</div>
       </div>
     </div>
   </div>
