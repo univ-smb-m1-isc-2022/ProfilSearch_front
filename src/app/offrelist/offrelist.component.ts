@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
 import { Offre } from '../models/offre.model';
 import { OffresService } from '../services/offres.services';
 
@@ -9,14 +10,16 @@ import { OffresService } from '../services/offres.services';
 })
 export class OffrelistComponent implements OnInit {
 
-  offres!: Offre[];
+  offres$!: Observable<Offre[]>;
 
   constructor(private offresService : OffresService) { }
 
   ngOnInit(): void {
 
-    this.offres = this.offresService.offres;
-    console.log(this.offres);
+    this.offres$ = this.offresService.getAllOffres();
+    console.log("offre", this.offres$.forEach(
+      (offre) => console.log(offre)
+    ))
   }
 
 }
