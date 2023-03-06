@@ -13,7 +13,6 @@ import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.compo
 import { PageOffreComponent } from './page-offre/page-offre.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { CreateOffreComponent } from './create-offre/create-offre.component';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
