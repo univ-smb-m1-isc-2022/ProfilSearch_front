@@ -38,6 +38,18 @@ section {
                     p{
                         font-size: 1rem;
                     }
+                    .button {
+                        margin: 0.5rem 0 0.5rem 0;
+                        background: var(--color-lg-red);
+                        cursor : pointer;
+                        color: white;
+                        padding: 0.5rem;
+                        transition: all 0.3s ease;
+                        box-shadow: var(--shadow);
+                        &:hover {
+                            background: var(--color-red);
+                        }
+                    }
                 }
             }
         }

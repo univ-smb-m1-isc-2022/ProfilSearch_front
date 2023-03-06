@@ -11,6 +11,7 @@ import { OffrelistComponent } from './offrelist/offrelist.component';
 import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.component';
 import { PageOffreComponent } from './page-offre/page-offre.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { CreateOffreComponent } from './create-offre/create-offre.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
     OffrelistComponent,
     DashboardAdminComponent,
     PageOffreComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    CreateOffreComponent
   ],
   imports: [
     BrowserModule,

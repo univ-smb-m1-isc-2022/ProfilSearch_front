@@ -4,6 +4,7 @@ import { DashboardAdminComponent } from './dashboard-admin/dashboard-admin.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageOffreComponent } from './page-offre/page-offre.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { CreateOffreComponent } from './create-offre/create-offre.component';
 
 const routes: Routes = [
   { 
@@ -26,6 +27,11 @@ const routes: Routes = [
     component : PageOffreComponent ,
     data : { animation: 'OffrePage' }
   },
+  {
+    path: 'createoffre',
+    component : CreateOffreComponent,
+    data : { animation: 'CreateOffrePage' }
+  }
 ];
 
 @NgModule({
