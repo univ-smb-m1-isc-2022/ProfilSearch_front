@@ -1,4 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+//variables
+:root{
+  --color-ul-red: #f53b3b;
+  --color-red : #F55050;
+  --color-lg-red: #e66c6c;
+  --color-white : #fff;
+  --color-lg-grey: rgb(246 243 239);
+  --color-grey: #ddd;
+
+  // font size
+  --font-size-xxl: 3rem;
+  --font-size-xl: 1.5rem;
+  --font-size-lg: 1.2rem;
+
+  // shadow
+  --shadow : 2px 2px 8px rgba(0,0,0,0.1);
+  --hover-shadow : 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+main {
+  position: relative;
+}
+
 *,
 ::before,
 ::after {
@@ -6,3 +30,5 @@
   margin: 0;
   padding: 0;
 }
+
+

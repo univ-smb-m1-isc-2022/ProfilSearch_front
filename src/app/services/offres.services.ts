@@ -12,39 +12,8 @@ export class OffresService {
     // constructor() { }
     constructor(private http: HttpClient) { }
 
-    // offres : Offre[] = [
-    //         {
-    //           id: 1,
-    //           name: 'Développeur Angular',
-    //           description: 'Nous recherchons un développeur Angular pour un projet de 3 mois',
-    //           dateDebut: new Date('2020-01-01'),
-    //           dateFin: new Date('2020-01-01'),
-    //           type: 'CDI',
-    //           place: 'Paris',
-    //           salary: 3000,
-    //         },
-    //         {
-    //           id: 2,
-    //           name: 'Développeur React',
-    //           description: 'Nous recherchons un développeur React pour un projet de 3 mois',
-    //           dateDebut: new Date('2020-01-01'),
-    //           dateFin: new Date('2020-01-01'),
-    //           type: 'CDI',
-    //           place: 'Paris',
-    //           salary: 3000,            },
-    //         {
-    //           id: 3,
-    //           name: 'Développeur Vue',
-    //           description: 'Nous recherchons un développeur Vue pour un projet de 3 mois',
-    //           dateDebut: new Date('2020-01-01'),
-    //           dateFin: new Date('2020-01-01'),
-    //           type: 'CDI',
-    //           place: 'Paris',
-    //           salary: 3000,            }
-    //     ];
-
     getAllOffres(): Observable<Offre[]> {
-        return this.http.get<Offre[]>(`http://localhost:8080/profilsearch/offre/getAll`);
+        return this.http.get<Offre[]>('http://localhost:8080/profilsearch/offre/all');
     }
 
     // getOffreById(id: number): Observable<Offre> {
