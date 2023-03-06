@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Offre } from '../models/offre.model';
 import { OffresService } from '../services/offres.services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-offrelist',
@@ -17,9 +18,6 @@ export class OffrelistComponent implements OnInit {
   ngOnInit(): void {
 
     this.offres$ = this.offresService.getAllOffres();
-    console.log("offre", this.offres$.forEach(
-      (offre) => console.log(offre)
-    ))
   }
 
 }
