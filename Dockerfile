@@ -18,9 +18,14 @@ FROM nginx:alpine
 # Copie les fichiers construits de l'application dans Nginx
 COPY --from=node /app/dist/profilsearch /usr/share/nginx/html
 
-# Expose le port 80 pour accéder à l'application
-EXPOSE 80
+# PORT 4200
+EXPOSE 4200
 
 # Démarre Nginx pour servir l'application
 CMD ["nginx", "-g", "daemon off;"]
+
+# launch command 
+# docker build -t profilsearch .
+# docker run -d -p 4200:4200 profilsearch
+# docker run -d -p 4200:4200 --name profilsearch profilsearch
 
