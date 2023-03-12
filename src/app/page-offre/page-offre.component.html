@@ -29,41 +29,27 @@
                         <p class="subtitle">Renseigner ici vos informations personnelles pour que nos agents puissent vous recontatcter.</p>
                         <div class="info">
                             <span>Nom</span>
-                            <input type="text">
+                            <input type="text" id="name"  [(ngModel)]="candidature.name" required>
                         </div>
                         <div class="info">
                             <span>Prénom</span>
-                            <input type="text">
+                            <input type="text" id="fname" [(ngModel)]="candidature.fname" required>
                         </div>
                         <div class="info">
                             <span>Email</span>
-                            <input type="text">
+                            <input type="text" id="email" [(ngModel)]="candidature.email" required>
                         </div>
                     </div>
                     <h1 id="postuler">Questions</h1>
                     <p>Voici quelques questions pour nous aider à mieux vous connaître avant un futur entretien.</p>
-                    <div class="offre-question">
-                        <span class="offre-question-title">Décrivez votre profil.</span>
-                        <textarea name="answer" class="offre-question-answer" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="offre-question">
-                        <span class="offre-question-title">Quel est votre niveau d'anglais ?</span>
-                        <span class="offre-question-answer">Bilingue</span>
-                    </div>
-                    <div class="offre-question">
-                        <span class="offre-question-title">Quels sont vos langages préférés ?</span>
-                        <textarea name="answer" class="offre-question-answer" cols="30" rows="10"></textarea>
-                    </div>
-                    <div class="offre-question">
-                        <span class="offre-question-title">Dans quelle ville résidez-vous ?</span>
-                        <input type="text">
-                    </div>
-                    <div class="offre-question">
-                        <span class="offre-question-title">Quelles sont vos activités extra-professionnelles ?</span>
-                        <textarea name="answer" class="offre-question-answer" cols="30" rows="10"></textarea>
+                    <div *ngFor="let question of offre.questions" class="question">
+                        <span>{{ question["question"] }}</span>
+                        <div class="answer">
+                            <input type="text" id="{{question['id']}}"/>
+                        </div>
                     </div>
                     <div class="postuler-offre">
-                        <div class="button">
+                        <div class="button" (click)="postuler()">
                             <span>Postuler</span>
                         </div>
                     </div>
