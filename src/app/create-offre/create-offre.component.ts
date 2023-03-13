@@ -1,3 +1,5 @@
+import { Offre } from '../models/offre.model';
+import { OffresService } from '../services/offres.services';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateOffreComponent implements OnInit {
 
-  constructor() { }
+  constructor(private offresService: OffresService) { }
+
+  offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', []);
+
 
   ngOnInit(): void {
   }

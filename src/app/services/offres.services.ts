@@ -20,4 +20,8 @@ export class OffresService {
         return this.http.get<Offre>('http://localhost:8080/profilsearch/offre/' + id);
     }
 
+    createOffre(offre: Offre): Observable<Offre> {
+        return this.http.post<Offre>('http://localhost:8080/profilsearch/offre/create', offre);
+    }
+
 }

@@ -5,22 +5,22 @@
                 <h1>Informations de l'offre</h1>
                 <div class="offre-question">
                     <span class="offre-question-title">Le poste</span>
-                    <input type="text">
+                    <input type="text" [(ngModel)]="offre.name">
                 </div>
                 <div class="offre-question">
                     <span class="offre-question-title">Type de contrat</span>
-                    <input type="text">
+                    <input type="text" [(ngModel)]="offre.type">
                 </div>
                 <div class="offre-question">
                     <span class="offre-question-title">Lieu</span>
-                    <input type="text">
+                    <input type="text" [(ngModel)]="offre.place">
                 </div>
             </header>
         </div>
         <div class="offre-section">
             <div class="offre-descritpion">
                 <span class="offre-question-title">Description de l'offre</span>
-                <textarea name="answer" class="offre-question-answer" cols="30" rows="10"></textarea>
+                <textarea name="answer" class="offre-question-answer" cols="30" rows="10" [(ngModel)]="offre.description"></textarea>
             </div>
             <div class="offre-questions">
                 <div class="offre-question">
