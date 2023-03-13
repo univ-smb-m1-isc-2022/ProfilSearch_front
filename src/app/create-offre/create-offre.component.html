@@ -35,8 +35,9 @@
                     </div>
                 </div>        
             </div>
-            <div class="offre-question">
-                <div class="button" (click)="ajouterQuestion()">
+            <div class="create-question">
+                <input type="text" [(ngModel)]="newQuestion.question">
+                <div class="button" (click)="createQuestion()">
                     <span>Créer une question</span>
                 </div>
             </div>

@@ -16,6 +16,8 @@ export class QuestionsService {
         return this.http.get<Question[]>('http://localhost:8080/profilsearch/question/all');
     }
 
-
+    createQuestion(question: Question): Observable<Question> {
+        return this.http.post<Question>('http://localhost:8080/profilsearch/question/create', question);
+    }
 
 }

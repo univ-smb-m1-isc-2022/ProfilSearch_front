@@ -14,9 +14,11 @@ export class CreateOffreComponent implements OnInit {
   constructor(private offresService: OffresService, private questionsService : QuestionsService) { }
 
   offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', []);
+  newQuestion: Question = new Question(0, '');
+
   // liste de questions
   listquestions: Question[] = [];
-  questions: Question[] = [];
+  // questions: Question[] = [];
   nbQuestion: number = 0;
 
   ngOnInit(): void {
@@ -26,7 +28,6 @@ export class CreateOffreComponent implements OnInit {
   }
 
   creerOffre() {
-    console.log(this.questions)
     console.log(this.offre)
   }
 
@@ -49,6 +50,13 @@ export class CreateOffreComponent implements OnInit {
 
   getQuestionsArray(nbQuestions: number): number[] {
     return Array(nbQuestions).fill(0).map((x, i) => i);
+  }
+
+  createQuestion() {
+    this.questionsService.createQuestion(this.newQuestion).subscribe((newQuestion) => {
+      this.listquestions.push(newQuestion);
+      this.newQuestion = new Question(0, '');
+    })
   }
 
 }
