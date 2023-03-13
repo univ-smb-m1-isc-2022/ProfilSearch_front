@@ -15,7 +15,7 @@ export class PageOffreComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService) { }
 
-  candidature: Candidature = new Candidature(0, '', '', '', 0);
+  candidature: Candidature = new Candidature(0, '', '', '', {id:0});
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -37,10 +37,12 @@ export class PageOffreComponent implements OnInit {
 
   postuler(): void {
     console.log("Postuler");
-    this.candidature.id_offre = this.offre.id;
+    this.candidature.offre.id = this.offre.id;
     console.log(this.candidature);
 
-    this.candidaturesService.createCandidature(this.candidature);
+    this.candidaturesService.createCandidature(this.candidature).subscribe((candidature) => {
+      console.log("Candidature :: " + candidature);
+    })
 
   }
 }
