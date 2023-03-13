@@ -23,22 +23,26 @@
                 <textarea name="answer" class="offre-question-answer" cols="30" rows="10" [(ngModel)]="offre.description"></textarea>
             </div>
             <div class="offre-questions">
-                <div class="offre-question">
-                    <span class="offre-question-title">Question 1</span>
-                    <textarea name="answer" class="offre-question-answer" cols="30" rows="10"></textarea>
+                <div class="offre-question" *ngFor="let question of getQuestionsArray(nbQuestion); let i = index;">
+                    <span class="offre-question-title">Question {{ i+1 }}</span>
+                <select class="select" (change)="modifierQuestion(i)">
+                    <option *ngFor="let question of listquestions" [value]="question.question">{{ question.question }}</option>
+                    </select>
                 </div>
                 <div class="offre-question">
-                    <span class="offre-question-title">Question 2</span>
-                    <textarea name="answer" class="offre-question-answer" cols="30" rows="10"></textarea>
-                </div>
-                <div class="offre-question">
-                    <span class="offre-question-title">Question 3</span>
-                    <textarea name="answer" class="offre-question-answer" cols="30" rows="10"></textarea>
+                    <div class="button" (click)="ajouterQuestion()">
+                        <span>Ajouter une question</span>
+                    </div>
+                </div>        
+            </div>
+            <div class="offre-question">
+                <div class="button" (click)="ajouterQuestion()">
+                    <span>Créer une question</span>
                 </div>
             </div>
         </div>
         <div class="creer-offre">
-            <div class="button">
+            <div class="button" (click)="creerOffre()">
                 <span>Creer</span>
             </div>
         </div>

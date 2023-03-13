@@ -40,6 +40,17 @@ section {
         input:focus {
             outline: none;
         }
+        .select {
+            width: 100%;
+            border: 1px solid var(--color-grey);
+            padding: 0.5rem;
+            font-size: 1rem;
+            background-color: var(--color-white);
+            cursor: pointer;
+            option {
+                background-color: var(--color-white);
+            }
+        }
     }
     .section {
         width: 40%;
@@ -53,25 +64,26 @@ section {
             justify-content: center;
             align-items: flex-end;
             flex-direction: column;
-            .button{
-                background-color: var(--color-lg-red);
-                color: var(--color-white);
-                border: none;
-                padding: 10px;
-                font-size: 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s ease-in-out;
-                &:hover {
-                    background-color: var(--color-lg-red);
-                    color: var;
-                }
-            }
         }
     }
     @media screen and (max-width: 800px) {
         .section{
             width: 90%;
         }
-    }        
+    }
+    .button {
+        background-color: var(--color-lg-red);
+        color: var(--color-white);
+        border: none;
+        padding: 10px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: var(--color-lg-red);
+            color: var;
+        }
+    }
 }

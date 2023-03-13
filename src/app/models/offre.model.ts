@@ -1,3 +1,5 @@
+import { Question } from "./question.model";
+
 export class Offre {
     constructor(
         public id: number,
@@ -9,7 +11,7 @@ export class Offre {
         public salary: number,
         public type: string,
         public place: string,
-        public questions: []
+        public questions: Question[]
         
     ){
     }
