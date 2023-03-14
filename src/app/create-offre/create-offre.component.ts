@@ -29,6 +29,10 @@ export class CreateOffreComponent implements OnInit {
 
   creerOffre() {
     console.log(this.offre)
+    this.offresService.createOffre(this.offre).subscribe((offre) => {
+      this.offre = offre;
+    }
+    )
   }
 
   ajouterQuestion() {
@@ -42,10 +46,12 @@ export class CreateOffreComponent implements OnInit {
     console.log(this.offre.questions)
   }
   
-  modifierQuestion(questionIndex: number) {
-    var question = this.offre.questions[questionIndex].question;
-    var nouvelleQuestion = new Question(questionIndex, question)
-    this.offre.questions[questionIndex] = nouvelleQuestion;
+  modifierQuestion(questionIndex: number, event: Event) {
+    var idQuestion = (event.target as HTMLSelectElement).selectedIndex;
+
+    var question = this.listquestions[idQuestion];
+
+    this.offre.questions[questionIndex] = question;
   }
 
   getQuestionsArray(nbQuestions: number): number[] {

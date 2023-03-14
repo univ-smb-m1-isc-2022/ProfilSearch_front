@@ -25,7 +25,7 @@
             <div class="offre-questions">
                 <div class="offre-question" *ngFor="let question of getQuestionsArray(nbQuestion); let i = index;">
                     <span class="offre-question-title">Question {{ i+1 }}</span>
-                <select class="select" (change)="modifierQuestion(i)">
+                <select class="select" (change)="modifierQuestion(i, $event)">
                     <option *ngFor="let question of listquestions" [value]="question.question">{{ question.question }}</option>
                     </select>
                 </div>
