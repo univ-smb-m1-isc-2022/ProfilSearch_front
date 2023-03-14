@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Offre } from '../models/offre.model';
+import { Reponse } from '../models/reponse.model';
 import { ActivatedRoute } from '@angular/router';
 import { OffresService } from '../services/offres.services';
 import { Candidature } from '../models/candidature.model';
@@ -15,7 +16,7 @@ export class PageOffreComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService) { }
 
-  candidature: Candidature = new Candidature(0, '', '', '', {id:0});
+  candidature: Candidature = new Candidature(0, '', '', '', { id: 0 }, []);
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -24,8 +25,13 @@ export class PageOffreComponent implements OnInit {
         this.offre = offre;
         console.log("Offre :: " + offre)
         console.log("Questions :: " + offre.questions.at(0))
+
+        for (let i = 0; i < this.offre.questions.length; i++) {
+          this.candidature.reponses.push(new Reponse(0, '', this.offre.questions[i]));
+        }
       })
     }
+
   }
   
   scrollToElement(elementId: string): void {
@@ -38,7 +44,6 @@ export class PageOffreComponent implements OnInit {
   postuler(): void {
     console.log("Postuler");
     this.candidature.offre.id = this.offre.id;
-    console.log(this.candidature);
 
     this.candidaturesService.createCandidature(this.candidature).subscribe((candidature) => {
       console.log("Candidature :: " + candidature);

@@ -42,10 +42,10 @@
                     </div>
                     <h1 id="postuler">Questions</h1>
                     <p>Voici quelques questions pour nous aider à mieux vous connaître avant un futur entretien.</p>
-                    <div *ngFor="let question of offre.questions" class="question">
-                        <span>{{ question["question"] }}</span>
-                        <div class="answer">
-                            <input type="text" id="{{question['id']}}"/>
+                    <div *ngFor="let question of offre.questions; let i= index" class="offre-question">
+                        <span class="offre-question-title">{{ question["question"] }}</span>
+                        <div class="question-answer">
+                            <input type="text" id="{{question['id']}}" [(ngModel)]="candidature.reponses[i].reponse"/>
                         </div>
                     </div>
                     <div class="postuler-offre">
