@@ -5,7 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { OffresService } from '../../services/offres.services';
 import { Candidature } from '../../models/candidature.model';
 import { CandidaturesService } from '../../services/candidatures.services';
-
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCandidatureComponent } from '../modal-candidature/modal-candidature.component';
 @Component({
   selector: 'app-page-offre-admin',
   templateUrl: './page-offre-admin.component.html',
@@ -16,7 +17,7 @@ export class PageOffreAdminComponent implements OnInit {
 
   @Input () offre!: Offre;
 
-  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService) { }
+  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService, private dialog: MatDialog) { }
 
   candidatures!: Candidature[];
 
@@ -45,5 +46,21 @@ export class PageOffreAdminComponent implements OnInit {
       element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
     }
   }  
+
+  openDialog(index: number) {
+    console.log(this.candidatures)
+    
+    console.log(index)
+    const dialogRef = this.dialog.open(ModalCandidatureComponent, {
+      data: {
+        candidature: this.candidatures[index]
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 
 }

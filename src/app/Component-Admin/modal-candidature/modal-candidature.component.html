@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="title">
+        <h2 class="name">Candidature de {{candidature.fname}} {{ candidature.name}}  </h2>
+    </div>
+
+    <div class="infos">
+        <p class="candidature-element">Email : {{candidature.email}}</p>
+    </div>
+
+    <div class="questions-reponse">
+        <h2>Questions</h2>
+        <div class="question" *ngFor="let question of candidature.reponses; let i= index">
+            <p class="question-title">{{question.question.question}}</p>
+            <p class="question-reponse">{{question.reponse}}</p>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</div>

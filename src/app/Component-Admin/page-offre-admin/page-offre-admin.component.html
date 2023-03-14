@@ -30,8 +30,8 @@
                     </div>
                 </div>
                 <h1>Candidatures</h1>
-                <app-candidature-card *ngFor="let candidature of candidatures"
-                    [candidature]="candidature"></app-candidature-card>
+                <app-candidature-card *ngFor="let candidature of candidatures; let i= index"
+                    [candidature]="candidature" (click)="openDialog(i)"></app-candidature-card>
             </div>
         </div>
     </div>

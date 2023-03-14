@@ -1,0 +1,35 @@
+.container {
+    width: 80vh;
+    height: 90vh;
+
+    .title {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .infos {
+        margin-top: 5vh;
+    }
+
+    .questions-reponse{
+
+        margin-top:5vh;
+
+        .question {
+
+            padding:1vh;
+
+            .question-title{
+                display:flex;
+                font-size: large;
+                border-bottom: 2px solid var(--color-lg-red);
+                margin-bottom: 1vh;
+            }
+
+            .question-reponse{
+                display:flex;
+            }
+        }
+    }
+}
