@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Offre } from '../models/offre.model';
-import { Reponse } from '../models/reponse.model';
+import { Offre } from '../../models/offre.model';
+import { Reponse } from '../../models/reponse.model';
 import { ActivatedRoute } from '@angular/router';
-import { OffresService } from '../services/offres.services';
-import { Candidature } from '../models/candidature.model';
-import { CandidaturesService } from '../services/candidatures.services';
+import { OffresService } from '../../services/offres.services';
+import { Candidature } from '../../models/candidature.model';
+import { CandidaturesService } from '../../services/candidatures.services';
 @Component({
   selector: 'app-page-offre',
   templateUrl: './page-offre.component.html',

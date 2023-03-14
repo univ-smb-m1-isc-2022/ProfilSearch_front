@@ -1,8 +1,8 @@
-import { Offre } from '../models/offre.model';
-import { Question } from '../models/question.model';
-import { OffresService } from '../services/offres.services';
+import { Offre } from '../../models/offre.model';
+import { Question } from '../../models/question.model';
+import { OffresService } from '../../services/offres.services';
 import { Component, OnInit } from '@angular/core';
-import { QuestionsService } from '../services/questions.services';
+import { QuestionsService } from '../../services/questions.services';
 
 @Component({
   selector: 'app-create-offre',

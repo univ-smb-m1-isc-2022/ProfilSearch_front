@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Candidature } from '../models/candidature.model';
+import { Candidature } from '../../models/candidature.model';
 
 @Component({
   selector: 'app-candidature-card',
