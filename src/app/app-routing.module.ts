@@ -5,6 +5,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageOffreComponent } from './page-offre/page-offre.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { CreateOffreComponent } from './create-offre/create-offre.component';
+import { CandidatureCardComponent } from './candidature-card/candidature-card.component';
+import { OffreAdminComponent } from './offre-admin/offre-admin.component';
 
 const routes: Routes = [
   { 
@@ -31,6 +33,10 @@ const routes: Routes = [
     path: 'createoffre',
     component : CreateOffreComponent,
     data : { animation: 'CreateOffrePage' }
+  },
+  {
+    path: 'offre-admin/:id',
+    component : OffreAdminComponent,
   }
 ];
 

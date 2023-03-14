@@ -1,0 +1,37 @@
+<section>
+    <div class="section">
+        <div class="left-container">
+            <div class="content">
+                <div class="offre-title">
+                    <span>Le poste</span>
+                    <h3>{{ offre.name }}</h3>
+                </div>
+                <div class="offre-infos">
+                    <span class="offre-salary">{{ offre.salary }}€</span>
+                    <span class="offre-type">{{ offre.type }}</span>
+                    <span class="offre-place">{{ offre.place }}</span>
+                    <span class="offre-published">Publiée le {{ offre.creation_date }}</span>
+                </div>
+            </div>
+            <div class="button">
+                <span (click)="scrollToElement('postuler')">Postuler</span>
+            </div>
+        </div>
+        <div class="main-container">
+            <div class="content">
+                <h1>Description du poste</h1>
+                <div class="offre-description">
+                    <p>{{ offre.description }}</p>
+                </div>
+                <div class="offre-questions">
+                    <h1 id="postuler">Questions</h1>
+                    <div *ngFor="let question of offre.questions; let i= index" class="offre-question">
+                        <span class="offre-question-title">{{ question["question"] }}</span>
+                    </div>
+                </div>
+                <h1>Candidatures</h1>
+                <app-candidature-card *ngFor="let candidature of candidatures" [candidature]="candidature"></app-candidature-card>
+            </div>
+        </div>
+    </div>
+</section>

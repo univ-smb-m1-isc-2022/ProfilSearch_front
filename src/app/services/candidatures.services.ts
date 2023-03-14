@@ -18,4 +18,8 @@ export class CandidaturesService {
         return this.http.post<Candidature>('http://localhost:8080/profilsearch/candidature/create', candidature);
     }
 
+    getCandidaturesByOffreId(id: string): Observable<Candidature[]> {
+        return this.http.get<Candidature[]>('http://localhost:8080/profilsearch/candidature/offre/' + id);
+    }
+
 }
