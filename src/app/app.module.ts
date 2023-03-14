@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { CreateOffreComponent } from './Component-Admin/create-offre/create-offr
 import { OffreAdminComponent } from './Component-Admin/offre-admin/offre-admin.component';
 import { CandidatureCardComponent } from './Component-Admin/candidature-card/candidature-card.component';
 import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page-offre-admin.component';
+import { ModalCandidatureComponent } from './Component-Admin/modal-candidature/modal-candidature.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,16 @@ import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page
     CreateOffreComponent,
     OffreAdminComponent,
     CandidatureCardComponent,
-    PageOffreAdminComponent
+    PageOffreAdminComponent,
+    ModalCandidatureComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
