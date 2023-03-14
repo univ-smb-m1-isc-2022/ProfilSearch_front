@@ -13,37 +13,11 @@ import { CandidaturesService } from '../../services/candidatures.services';
 })
 export class OffreAdminComponent implements OnInit {
 
-  @Input () offre!: Offre;
+ @Input() offre!: Offre;
 
-  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService) { }
+  constructor() { }
 
-  candidatures!: Candidature[];
-
-  ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id != null) {
-      this.offresService.getOffreById(id).subscribe((offre) => {
-        this.offre = offre;
-        console.log("Offre :: " + offre)
-        console.log("Questions :: " + offre.questions.at(0))
-      })
-
-      this.candidaturesService.getCandidaturesByOffreId(id).subscribe((candidatures) => {
-        this.candidatures = candidatures;
-        console.log("Candidatures :: " + candidatures)
-      })
-    }
-
-    
-
+  ngOnInit() {
+    console.log(this.offre);
   }
-  
-  scrollToElement(elementId: string): void {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }
-  }  
-
 }
-

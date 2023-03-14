@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/internal/Observable';
+import { Offre } from 'src/app/models/offre.model';
+import { OffresService } from 'src/app/services/offres.services';
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardAdminComponent implements OnInit {
 
-  constructor() { }
+  offres$!: Observable<Offre[]>;
+
+  constructor(private offresService : OffresService) { }
 
   ngOnInit(): void {
+
+    this.offres$ = this.offresService.getAllOffres();
   }
 
 }

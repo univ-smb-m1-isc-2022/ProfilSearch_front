@@ -16,6 +16,7 @@ import { LoginPageComponent } from './Component-Admin/login-page/login-page.comp
 import { CreateOffreComponent } from './Component-Admin/create-offre/create-offre.component';
 import { OffreAdminComponent } from './Component-Admin/offre-admin/offre-admin.component';
 import { CandidatureCardComponent } from './Component-Admin/candidature-card/candidature-card.component';
+import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page-offre-admin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CandidatureCardComponent } from './Component-Admin/candidature-card/can
     LoginPageComponent,
     CreateOffreComponent,
     OffreAdminComponent,
-    CandidatureCardComponent
+    CandidatureCardComponent,
+    PageOffreAdminComponent
   ],
   imports: [
     BrowserModule,

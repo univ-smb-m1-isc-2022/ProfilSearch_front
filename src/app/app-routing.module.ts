@@ -7,6 +7,7 @@ import { LoginPageComponent } from './Component-Admin/login-page/login-page.comp
 import { CreateOffreComponent } from './Component-Admin/create-offre/create-offre.component';
 import { CandidatureCardComponent } from './Component-Admin/candidature-card/candidature-card.component';
 import { OffreAdminComponent } from './Component-Admin/offre-admin/offre-admin.component';
+import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page-offre-admin.component';
 
 const routes: Routes = [
   { 
@@ -36,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'offre-admin/:id',
-    component : OffreAdminComponent,
+    component : PageOffreAdminComponent,
   }
 ];
 

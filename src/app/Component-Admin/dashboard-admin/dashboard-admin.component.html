@@ -17,7 +17,7 @@
                 <h1>Bonjour Jonh !</h1>
             </header>
             <div class="content">
-                <app-offrelist></app-offrelist>
+                <app-offre-admin *ngFor="let offre of offres$ | async" [offre]="offre"></app-offre-admin>
             </div>
         </div>
     </div>
