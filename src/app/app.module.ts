@@ -19,6 +19,7 @@ import { OffreAdminComponent } from './Component-Admin/offre-admin/offre-admin.c
 import { CandidatureCardComponent } from './Component-Admin/candidature-card/candidature-card.component';
 import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page-offre-admin.component';
 import { ModalCandidatureComponent } from './Component-Admin/modal-candidature/modal-candidature.component';
+import { DeleteCandidatureComponent } from './delete-candidature/delete-candidature.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ModalCandidatureComponent } from './Component-Admin/modal-candidature/m
     OffreAdminComponent,
     CandidatureCardComponent,
     PageOffreAdminComponent,
-    ModalCandidatureComponent
+    ModalCandidatureComponent,
+    DeleteCandidatureComponent
   ],
   imports: [
     BrowserModule,

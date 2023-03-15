@@ -8,6 +8,7 @@ import { CreateOffreComponent } from './Component-Admin/create-offre/create-offr
 import { CandidatureCardComponent } from './Component-Admin/candidature-card/candidature-card.component';
 import { OffreAdminComponent } from './Component-Admin/offre-admin/offre-admin.component';
 import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page-offre-admin.component';
+import { DeleteCandidatureComponent } from './delete-candidature/delete-candidature.component';
 
 const routes: Routes = [
   { 
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'offre-admin/:id',
     component : PageOffreAdminComponent,
+  },
+  {
+    path: 'delete/:id',
+    component : DeleteCandidatureComponent,
   }
 ];
 
