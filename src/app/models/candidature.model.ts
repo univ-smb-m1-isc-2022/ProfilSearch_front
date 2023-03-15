@@ -5,7 +5,7 @@ export class Candidature {
         public name: string,
         public fname: string,
         public email: string,
-        public offre: { id: number },
+        public offre: { id: number, name?: string },
         public reponses: Reponse[]
     ){
     }

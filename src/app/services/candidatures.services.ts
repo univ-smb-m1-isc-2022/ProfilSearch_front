@@ -22,4 +22,12 @@ export class CandidaturesService {
         return this.http.get<Candidature[]>('http://localhost:8080/profilsearch/candidature/offre/' + id);
     }
 
+    getCandidatureByToken(token: string): Observable<Candidature> {
+        return this.http.get<Candidature>('http://localhost:8080/profilsearch/candidature/token/' + token);
+    }
+
+    deleteCandidature(token: string): Observable<any> {
+        return this.http.get('http://localhost:8080/profilsearch/candidature/delete/' + token);
+    }
+
 }
