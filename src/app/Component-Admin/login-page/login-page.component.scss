@@ -85,6 +85,36 @@
             background-color: #df5959;
             color: var;
         }
+
+        .GoogleButton{
+            width: 80%;
+            background-color: var(--color-white);
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                background-color: var(--color-white);
+                color: var;
+            }
+
+            .link {
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+                color: var(--color-black);
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+            
+        }
     }
     @media screen and (max-width: 768px) {
         .login-container {
