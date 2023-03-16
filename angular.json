@@ -68,6 +68,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "profilsearch:build",
+            "port" : 3000
+          },
           "configurations": {
             "production": {
               "browserTarget": "profilsearch:build:production"
