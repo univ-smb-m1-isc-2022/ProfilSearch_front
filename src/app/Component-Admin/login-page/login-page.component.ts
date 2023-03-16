@@ -13,7 +13,15 @@ export class LoginPageComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router, public constantes: Constantes, private localService: LocalService) {}
 
+  authUrl: string = '';
+
   ngOnInit(): void {
+
+  const inviteLink = 'https://example.com/invite/1234';
+  const redirectUri = 'http://localhost:3000/oauth2/redirect?invite_link=' + inviteLink;
+  this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=' + encodeURIComponent(redirectUri);
+
+
     const token = this.router.parseUrl(this.router.url).queryParams['token'];
     if (token) {
       localStorage.setItem('accessToken', token);
