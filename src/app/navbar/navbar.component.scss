@@ -23,6 +23,22 @@
             height: 50px;
             margin-right: 10px;
         }
+        .button {
+            background-color: var(--color-lg-red);
+            color: var(--color-white);
+            border: none;
+            padding: 10px;
+            margin-left: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: var(--color-lg-red);
+                color: var;
+            }
+        }
     }
     .nav {
         width: 30%;
@@ -60,6 +76,25 @@
         .button:hover {
             background-color: #df5959;
             color: var;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+            .profile-name {
+                font-size: 1.2rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                color: var(--color-lg-red);
+                
+            }
         }
     }
 }
