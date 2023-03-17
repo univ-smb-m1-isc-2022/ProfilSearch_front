@@ -18,9 +18,6 @@ FROM nginx:alpine
 # Copie les fichiers construits de l'application dans Nginx
 COPY --from=node /app/dist/profilsearch /usr/share/nginx/html
 
-# PORT 4200
-EXPOSE 4200
-
 # Démarre Nginx pour servir l'application
 CMD ["nginx", "-g", "daemon off;"]
 
