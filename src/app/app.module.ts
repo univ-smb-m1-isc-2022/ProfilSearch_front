@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
-import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
+// import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
 import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -51,7 +51,7 @@ import { OAuth2RedirectHandlerComponent } from './Component-Admin/oauth2-redirec
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    SocialLoginModule,
+    // SocialLoginModule,
     MatIconModule
   ],
   providers: [
