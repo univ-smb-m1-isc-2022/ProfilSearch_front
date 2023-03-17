@@ -25,7 +25,7 @@ jobs:
       - name: Build Project
         run: npm run build --prod
 
-    - name: Build Docker image
+      - name: Build Docker image
         run: docker build -t profilsearch_front .
 
       - name: Push to GitHub Packages of organization
