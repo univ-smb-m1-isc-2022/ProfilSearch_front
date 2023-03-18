@@ -20,9 +20,9 @@ export class DashboardAdminComponent implements OnInit {
   
 
   constructor(private offresService: OffresService, private localService: LocalService, private cd: ChangeDetectorRef, private router: Router) {
-    if (this.localService.getData('name') == null) {
-      location.reload();
-    }
+    // if (this.localService.getData('name') == null) {
+    //   location.reload();
+    // }
    }
 
   
