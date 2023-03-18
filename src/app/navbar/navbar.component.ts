@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalService } from 'src/app/services/local.service';
 import { AuthService } from '../services/auth.services';
 
@@ -9,7 +10,7 @@ import { AuthService } from '../services/auth.services';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public localService: LocalService, private authService: AuthService) { }
+  constructor(public localService: LocalService, private authService: AuthService, private router: Router) { }
 
   name: string = '';
   email: string = '';
@@ -28,6 +29,7 @@ export class NavbarComponent implements OnInit {
   logout() {
     console.log("logout")
     this.authService.logout();
+    this.router.navigate(['/']);
   }
 
 }

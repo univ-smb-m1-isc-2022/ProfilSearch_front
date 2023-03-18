@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Offre } from 'src/app/models/offre.model';
 import { LocalService } from 'src/app/services/local.service';
 import { OffresService } from 'src/app/services/offres.services';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -18,16 +19,49 @@ export class DashboardAdminComponent implements OnInit {
   imageUrl: string = '';
   
 
-  constructor(private offresService: OffresService, private localService: LocalService) { }
+  constructor(private offresService: OffresService, private localService: LocalService, private cd: ChangeDetectorRef, private router: Router) {
+    if (this.localService.getData('name') == null) {
+      location.reload();
+    }
+   }
+
+  
 
   ngOnInit(): void {
 
     this.offres$ = this.offresService.getAllOffres();
+
+    console.log('accessToken:', this.localService.getData('accessToken'))
+    console.log(this.localService.getAllData())
+    console.log(localStorage.getItem('email'))
+
+    console.log('name:', this.localService.getData('name'))
+
+      
+
     if (this.localService.getData('accessToken')) {
+      console.log('name:', this.localService.getData('name'))
+      this.name = this.localService.getData('name') as string;
+      this.email = this.localService.getData('email') as string;
+      this.imageUrl = this.localService.getData('imageUrl') as string;
+    }
+
+    console.log('name:', this.name)
+    console.log('email:', this.email)
+    console.log('imageUrl:', this.imageUrl)
+
+    // forcer un refresh de la page
+    this.cd.detectChanges();
+  }
+
+  ngAfterViewInit() {
+    if (this.localService.getData('accessToken')) {
+      console.log('name:', this.localService.getData('name'))
       this.name = this.localService.getData('name') as string;
       this.email = this.localService.getData('email') as string;
       this.imageUrl = this.localService.getData('imageUrl') as string;
     }
   }
+
 
 }

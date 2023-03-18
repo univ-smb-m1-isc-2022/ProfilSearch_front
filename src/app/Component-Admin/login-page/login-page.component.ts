@@ -19,7 +19,8 @@ export class LoginPageComponent implements OnInit {
 
   const inviteLink = 'https://example.com/invite/1234';
   const redirectUri = 'http://localhost:3000/oauth2/redirect?invite_link=' + inviteLink;
-  this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=' + encodeURIComponent(redirectUri);
+    this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=' + encodeURIComponent(redirectUri);
+    this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:3000/oauth2/redirect';
 
 
     const token = this.router.parseUrl(this.router.url).queryParams['token'];
