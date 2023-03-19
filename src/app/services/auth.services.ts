@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { throwError, Observable, catchError } from 'rxjs';
 import { Constantes } from '../constantes';
+import { User } from '../models/user.model';
 import { LocalService } from './local.service';
 
 @Injectable({
@@ -51,6 +52,10 @@ export class AuthService {
       .pipe(
         catchError(this.handleError)
       );
+  }
+
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>("http://localhost:8080/profilsearch/user/all");
   }
 
   login(loginRequest: any): Observable<any> {

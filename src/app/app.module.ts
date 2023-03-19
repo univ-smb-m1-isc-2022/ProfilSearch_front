@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './Component-User/dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OffreComponent } from './Component-User/offre/offre.component';
-import { OffrelistComponent } from './offrelist/offrelist.component';
 import { DashboardAdminComponent } from './Component-Admin/dashboard-admin/dashboard-admin.component';
 import { PageOffreComponent } from './Component-User/page-offre/page-offre.component';
 import { LoginPageComponent } from './Component-Admin/login-page/login-page.component';
@@ -26,13 +25,14 @@ import { Constantes } from './constantes';
 import { LocalService } from './services/local.service';
 import { AuthService } from './services/auth.services';
 import { OAuth2RedirectHandlerComponent } from './Component-Admin/oauth2-redirect-handler-component/oauth2-redirect-handler-component.component';
+import { SignupPageComponent } from './Component-Admin/signup-page/signup-page.component';
+import { InvitePageComponent } from './Component-Admin/invite-page/invite-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavbarComponent,
     OffreComponent,
-    OffrelistComponent,
     DashboardAdminComponent,
     PageOffreComponent,
     LoginPageComponent,
@@ -42,7 +42,9 @@ import { OAuth2RedirectHandlerComponent } from './Component-Admin/oauth2-redirec
     PageOffreAdminComponent,
     ModalCandidatureComponent,
     DeleteCandidatureComponent,
-    OAuth2RedirectHandlerComponent
+    OAuth2RedirectHandlerComponent,
+    SignupPageComponent,
+    InvitePageComponent
   ],
   imports: [
     BrowserModule,

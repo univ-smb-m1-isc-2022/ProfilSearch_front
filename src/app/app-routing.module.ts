@@ -10,6 +10,8 @@ import { OffreAdminComponent } from './Component-Admin/offre-admin/offre-admin.c
 import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page-offre-admin.component';
 import { DeleteCandidatureComponent } from './Component-User/delete-candidature/delete-candidature.component';
 import { OAuth2RedirectHandlerComponent } from './Component-Admin/oauth2-redirect-handler-component/oauth2-redirect-handler-component.component';
+import { SignupPageComponent } from './Component-Admin/signup-page/signup-page.component';
+import { InvitePageComponent } from './Component-Admin/invite-page/invite-page.component';
 
 const routes: Routes = [
   { 
@@ -48,6 +50,14 @@ const routes: Routes = [
   {
     path: 'oauth2/redirect',
     component : OAuth2RedirectHandlerComponent
+  },
+  {
+    path: 'signup',
+    component : SignupPageComponent
+  },
+  {
+    path: 'invite',
+    component : InvitePageComponent
   }
 ];
 
