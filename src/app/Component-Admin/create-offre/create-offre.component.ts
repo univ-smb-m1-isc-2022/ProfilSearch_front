@@ -3,6 +3,7 @@ import { Question } from '../../models/question.model';
 import { OffresService } from '../../services/offres.services';
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../services/questions.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-offre',
@@ -11,9 +12,9 @@ import { QuestionsService } from '../../services/questions.services';
 })
 export class CreateOffreComponent implements OnInit {
 
-  constructor(private offresService: OffresService, private questionsService : QuestionsService) { }
+  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router) { }
 
-  offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], []);
+  offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], [], '');
   newQuestion: Question = new Question(0, '');
   bulletPoints: string[] = [];
 
@@ -35,6 +36,7 @@ export class CreateOffreComponent implements OnInit {
       this.offre = offre;
     }
     )
+    this.router.navigate(['/admin']);
   }
 
   ajouterQuestion() {
