@@ -32,6 +32,11 @@ export class DashboardAdminComponent implements OnInit {
 
   ngOnInit(): void {
 
+      if (!window.location.hash) {
+        window.location.hash = 'loaded';
+        window.location.reload();
+      }
+
     this.offres$ = this.offresService.getAllOffres();
 
     console.log('accessToken:', this.localService.getData('accessToken'))
