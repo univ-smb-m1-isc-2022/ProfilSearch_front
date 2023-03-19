@@ -4,12 +4,18 @@
             <header>
                 <h1>Informations de l'offre</h1>
                 <div class="offre-question">
-                    <span class="offre-question-title">Le poste</span>
+                    <span class="offre-question-title">Intitulé de l'offre</span>
                     <input type="text" [(ngModel)]="offre.name">
                 </div>
                 <div class="offre-question">
                     <span class="offre-question-title">Type de contrat</span>
-                    <input type="text" [(ngModel)]="offre.type">
+                    <select [(ngModel)]="offre.type">
+                        <option value="CDI">CDI</option>
+                        <option value="CDD">CDD</option>
+                        <option value="Stage">Stage</option>
+                        <option value="Apprentissage">Apprentissage</option>
+                        <!-- Ajoutez d'autres options ici -->
+                    </select>
                 </div>
                 <div class="offre-question">
                     <span class="offre-question-title">Lieu</span>
@@ -22,6 +28,21 @@
                 <span class="offre-question-title">Description de l'offre</span>
                 <textarea name="answer" class="offre-question-answer" cols="30" rows="10" [(ngModel)]="offre.description"></textarea>
             </div>
+            <div class="offre-bullet">
+                <span class="offre-question-title">Compétences</span>
+                <div class="offre-question" *ngFor="let bullet of bulletPoints; let i = index;">
+                    <ul class="offre-question-answer">
+                        <li>
+                            <input type="text" [(ngModel)]="bulletPoints[i]"/>
+                        </li>
+                    </ul>
+                </div>
+                <button class="button" (click)="addBulletPoint()">
+                    <span class="material-icons">
+                        add
+                    </span>
+                </button>
+            </div>
             <div class="offre-questions">
                 <div class="offre-question" *ngFor="let question of getQuestionsArray(nbQuestion); let i = index;">
                     <span class="offre-question-title">Question {{ i+1 }}</span>
@@ -29,6 +50,8 @@
                     <option *ngFor="let question of listquestions" [value]="question.question">{{ question.question }}</option>
                     </select>
                 </div>
+                <input type="file" (change)="onFileSelected($event)">
+
                 <div class="offre-question">
                     <div class="button" (click)="ajouterQuestion()">
                         <span>Ajouter une question</span>
@@ -41,6 +64,10 @@
                     <span>Créer une question</span>
                 </div>
             </div>
+
+                <mat-slide-toggle [(ngModel)]="this.offre.published">
+                    Visible publiquement
+                </mat-slide-toggle>
         </div>
         <div class="creer-offre">
             <div class="button" (click)="creerOffre()">

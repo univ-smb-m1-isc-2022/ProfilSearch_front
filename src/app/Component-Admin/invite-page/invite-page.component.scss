@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .invite-container {
+        box-shadow: var(--shadow);
+        background-color: var(--color-lg-grey);
+        width: 40%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #confirmation {
+            font-size: var(--font-size-lg);
+            color: var(--color-green);
+            font-weight:700;
+        }
+
+
+        .header {
+            margin-bottom: 3rem;
+
+            .title {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 10px;
+                }
+            }
+
+            h1 {
+                font-size: var(--font-size-xxl);
+            }
+
+            p {
+                font-size: var(--font-size-lg);
+            }
+        }
+
+        .div-email {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+                .input-email {
+                    width: 60%;
+                    padding: 10px;
+                    font-size: 1rem;
+                    border: 1px solid black;
+                    border-radius: 5px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                
+            }
+
+            .button {
+                width: fit-content;
+                background-color: var(--color-lg-red);
+                color: var(--color-white);
+                border: none;
+                margin:10px;
+                padding: 10px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    background-color: #df5959;
+                    color: var;
+                }
+            }
+        }
+    }
+
+    
+
+    @media screen and (max-width: 768px) {
+        .invite-container {
+            width: 80%;
+        }
+    }
+}

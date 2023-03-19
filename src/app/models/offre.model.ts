@@ -11,7 +11,10 @@ export class Offre {
         public salary: number,
         public type: string,
         public place: string,
-        public questions: Question[]
+        public questions: Question[],
+        public image: number[],
+        public imageUrl: string,
+        public published: boolean,
         
     ){
     }

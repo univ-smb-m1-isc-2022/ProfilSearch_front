@@ -3,6 +3,7 @@ import { Question } from '../../models/question.model';
 import { OffresService } from '../../services/offres.services';
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../services/questions.services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-offre',
@@ -11,10 +12,11 @@ import { QuestionsService } from '../../services/questions.services';
 })
 export class CreateOffreComponent implements OnInit {
 
-  constructor(private offresService: OffresService, private questionsService : QuestionsService) { }
+  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router) { }
 
-  offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', []);
+  offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], [], '', true);
   newQuestion: Question = new Question(0, '');
+  bulletPoints: string[] = [];
 
   // liste de questions
   listquestions: Question[] = [];
@@ -25,6 +27,7 @@ export class CreateOffreComponent implements OnInit {
     this.questionsService.getAllQuestions().subscribe((listquestions) => {
       this.listquestions = listquestions;
     })
+    this.bulletPoints = ['', '', ''];
   }
 
   creerOffre() {
@@ -33,6 +36,7 @@ export class CreateOffreComponent implements OnInit {
       this.offre = offre;
     }
     )
+    this.router.navigate(['/admin']);
   }
 
   ajouterQuestion() {
@@ -63,6 +67,22 @@ export class CreateOffreComponent implements OnInit {
       this.listquestions.push(newQuestion);
       this.newQuestion = new Question(0, '');
     })
+  }
+
+  onFileSelected(event : any) {
+      const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    const arrayBuffer = reader.result as ArrayBuffer;
+    const byteArray = new Uint8Array(arrayBuffer);
+    this.offre.image = Array.from(byteArray);
+  };
+  reader.readAsArrayBuffer(file);
+  }
+
+  addBulletPoint() {
+    this.bulletPoints.push('');
+    console.log(this.bulletPoints)
   }
 
 }

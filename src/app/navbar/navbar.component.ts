@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LocalService } from 'src/app/services/local.service';
+import { AuthService } from '../services/auth.services';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public localService: LocalService, private authService: AuthService, private router: Router) { }
+
+  name: string = '';
+  email: string = '';
+  imageUrl: string = '';
+  
+
 
   ngOnInit(): void {
+    if (this.localService.getData('accessToken')) {
+      this.name = this.localService.getData('name') as string;
+      this.email = this.localService.getData('email') as string;
+      this.imageUrl = this.localService.getData('imageUrl') as string;
+    }
+  }
+
+  logout() {
+    console.log("logout")
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 
 }

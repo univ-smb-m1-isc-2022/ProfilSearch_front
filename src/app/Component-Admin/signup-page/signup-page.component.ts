@@ -1,26 +1,27 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Constantes } from 'src/app/constantes';
-import { LocalService } from 'src/app/services/local.service';
 import { AuthService } from 'src/app/services/auth.services';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { LocalService } from 'src/app/services/local.service';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.scss']
+  selector: 'app-signup-page',
+  templateUrl: './signup-page.component.html',
+  styleUrls: ['./signup-page.component.scss']
 })
-export class LoginPageComponent implements OnInit {
+export class SignupPageComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, public constantes: Constantes, private localService: LocalService, private http: HttpClient) {}
+
+  constructor(private authService: AuthService, private router: Router, public constantes: Constantes, private localService: LocalService, private http: HttpClient) { }
 
   authUrl: string = '';
   error: string = '';
 
   ngOnInit(): void {
 
-  const inviteLink = 'https://example.com/invite/1234';
-  const redirectUri = 'http://localhost:3000/oauth2/redirect?invite_link=' + inviteLink;
+    const inviteLink = 'https://example.com/invite/1234';
+    const redirectUri = 'http://localhost:3000/oauth2/redirect?invite_link=' + inviteLink;
     this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=' + encodeURIComponent(redirectUri);
     this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:3000/oauth2/redirect';
 
@@ -57,9 +58,9 @@ export class LoginPageComponent implements OnInit {
 
   connect() {
     console.log('connect')
-      const params = new HttpParams()
-          .set('additional_param_1', 'value1')
-          .set('additional_param_2', 'value2');
+    const params = new HttpParams()
+      .set('additional_param_1', 'value1')
+      .set('additional_param_2', 'value2');
         
     const baseUrl = 'http://localhost:8080/oauth2/authorize/google';
     const redirectUri = 'http://localhost:3000/oauth2/redirect';
@@ -69,6 +70,4 @@ export class LoginPageComponent implements OnInit {
 
 
   }
-
-
 }

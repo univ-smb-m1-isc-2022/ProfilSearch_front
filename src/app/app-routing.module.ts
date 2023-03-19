@@ -8,33 +8,36 @@ import { CreateOffreComponent } from './Component-Admin/create-offre/create-offr
 import { CandidatureCardComponent } from './Component-Admin/candidature-card/candidature-card.component';
 import { OffreAdminComponent } from './Component-Admin/offre-admin/offre-admin.component';
 import { PageOffreAdminComponent } from './Component-Admin/page-offre-admin/page-offre-admin.component';
-import { DeleteCandidatureComponent } from './delete-candidature/delete-candidature.component';
+import { DeleteCandidatureComponent } from './Component-User/delete-candidature/delete-candidature.component';
+import { OAuth2RedirectHandlerComponent } from './Component-Admin/oauth2-redirect-handler-component/oauth2-redirect-handler-component.component';
+import { SignupPageComponent } from './Component-Admin/signup-page/signup-page.component';
+import { InvitePageComponent } from './Component-Admin/invite-page/invite-page.component';
 
 const routes: Routes = [
   { 
     path: '', 
     component : DashboardComponent,
-    data: { animation: 'HomePage' }
+    // data: { animation: 'HomePage' }
   },
   {
     path: 'login',
     component : LoginPageComponent,
-    data : { animation: 'LoginPage' }
+    // data : { animation: 'LoginPage' }
   },
   { 
     path: 'admin', 
     component : DashboardAdminComponent,
-    data: { animation: 'AdminPage' }
+    // data: { animation: 'AdminPage' }
   },
   { 
     path: 'offre/:id', 
     component : PageOffreComponent ,
-    data : { animation: 'OffrePage' }
+    // data : { animation: 'OffrePage' }
   },
   {
     path: 'createoffre',
     component : CreateOffreComponent,
-    data : { animation: 'CreateOffrePage' }
+    // data : { animation: 'CreateOffrePage' }
   },
   {
     path: 'offre-admin/:id',
@@ -43,6 +46,18 @@ const routes: Routes = [
   {
     path: 'delete/:id',
     component : DeleteCandidatureComponent,
+  },
+  {
+    path: 'oauth2/redirect',
+    component : OAuth2RedirectHandlerComponent
+  },
+  {
+    path: 'signup',
+    component : SignupPageComponent
+  },
+  {
+    path: 'invite',
+    component : InvitePageComponent
   }
 ];
 

@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
-import { Candidature } from '../models/candidature.model';
-import { CandidaturesService } from '../services/candidatures.services';
+import { Candidature } from '../../models/candidature.model';
+import { CandidaturesService } from '../../services/candidatures.services';
 import { ActivatedRoute } from '@angular/router';
 
 
