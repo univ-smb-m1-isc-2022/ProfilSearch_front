@@ -12,6 +12,15 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .error {
+            color: var(--color-red);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
         .header{
             margin-bottom: 3rem;
             .title{

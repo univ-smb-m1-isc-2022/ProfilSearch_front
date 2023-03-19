@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Constantes } from 'src/app/constantes';
 import { LocalService } from 'src/app/services/local.service';
 import { AuthService } from 'src/app/services/auth.services';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-page',
@@ -11,9 +12,10 @@ import { AuthService } from 'src/app/services/auth.services';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, public constantes: Constantes, private localService: LocalService) {}
+  constructor(private authService: AuthService, private router: Router, public constantes: Constantes, private localService: LocalService, private http: HttpClient) {}
 
   authUrl: string = '';
+  error: string = '';
 
   ngOnInit(): void {
 
@@ -22,6 +24,8 @@ export class LoginPageComponent implements OnInit {
     this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=' + encodeURIComponent(redirectUri);
     this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:3000/oauth2/redirect';
 
+    this.error = this.router.parseUrl(this.router.url).queryParams['error'];
+    console.log(this.error)
 
     const token = this.router.parseUrl(this.router.url).queryParams['token'];
     if (token) {
@@ -49,6 +53,21 @@ export class LoginPageComponent implements OnInit {
         // Par exemple :
         console.log('Erreur lors de la connexion avec Google : ', error);
       });
+  }
+
+  connect() {
+    console.log('connect')
+      const params = new HttpParams()
+          .set('additional_param_1', 'value1')
+          .set('additional_param_2', 'value2');
+        
+    const baseUrl = 'http://localhost:8080/oauth2/authorize/google';
+    const redirectUri = 'http://localhost:3000/oauth2/redirect';
+    const url = `${baseUrl}?redirect_uri=${encodeURIComponent(redirectUri)}&${params.toString()}`;
+    
+    location.href = url;
+
+
   }
 
 

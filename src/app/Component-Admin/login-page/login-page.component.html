@@ -7,6 +7,11 @@
             </div>
             <p>Cette page est résérvé aux employés de ProfilSearch</p>
         </div>
+        <div class="error" *ngIf="error !== undefined">
+            <p>Vous n'avez pas les autorisations nécessaires pour vous connecter.</p>
+            <p>Veuillez contacter un administrateur pour en savoir plus.</p>
+        </div>
+
         <!-- <div class="inputs">
             <div class="input">
                 <label for="email">Email</label>
