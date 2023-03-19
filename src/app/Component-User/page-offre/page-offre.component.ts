@@ -1,15 +1,19 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Offre } from '../../models/offre.model';
 import { Reponse } from '../../models/reponse.model';
 import { ActivatedRoute } from '@angular/router';
 import { OffresService } from '../../services/offres.services';
 import { Candidature } from '../../models/candidature.model';
 import { CandidaturesService } from '../../services/candidatures.services';
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy } from '@angular/compiler';
+
 @Component({
   selector: 'app-page-offre',
   templateUrl: './page-offre.component.html',
   styleUrls: ['./page-offre.component.scss']
 })
+  
 export class PageOffreComponent implements OnInit, AfterViewInit {
 
   @Input () offre!: Offre;
@@ -17,23 +21,48 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
   imageFile = new Blob();
   imageUrl = '';
 
-  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService) { }
+  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService, private cdRef: ChangeDetectorRef) { }
+
   ngAfterViewInit(): void {
+    console.log("ngAfterViewInit")
     const imgElement = document.getElementById('offre-image') as HTMLImageElement;
-        console.log(imgElement)
-        if (imgElement)
-          imgElement.src = this.imageUrl;
+    console.log(imgElement)
+    if (imgElement)
+      imgElement.src = this.imageUrl;
+    // refresh the view
+    imgElement.src = this.imageUrl;
   }
 
   candidature: Candidature = new Candidature(0, '', '', '', { id: 0 }, []);
 
-  ngOnInit(): void {
+
+    ngOnInit(): void {
+    
+      // if (!window.location.hash) {
+      // window.location.hash = 'loaded';
+      // window.location.reload();
+      // }
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id != null) {
+      
       this.offresService.getOffreById(id).subscribe((offre) => {
         this.offre = offre;
-        console.log("Offre :: " + offre)
-        console.log("Questions :: " + offre.questions.at(0))
+        console.log(offre)
+
+        const imgElement = document.getElementById('offre-image') as HTMLImageElement;
+
+        if (imgElement && this.offre.imageUrl)
+          imgElement.src = this.offre.imageUrl;
+              
+        const blob = new Blob([new Uint8Array(this.offre.image)], { type: 'image/jpeg' });
+        const imageUrl = URL.createObjectURL(blob);
+
+        this.offre.imageUrl = imageUrl;
+
+        imgElement.src = this.offre.imageUrl;
+          
+          console.log("Questions :: " + offre.questions.at(0))
 
         for (let i = 0; i < this.offre.questions.length; i++) {
           this.candidature.reponses.push(new Reponse(0, '', this.offre.questions[i]));
@@ -41,11 +70,13 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
         this.imageFile = this.base64ToBlob(this.offre.image.toString());
         this.imageUrl = URL.createObjectURL(this.imageFile);
 
-      //   const imgElement = document.getElementById('offre-image') as HTMLImageElement;
-      //   console.log(imgElement)
-      //   if (imgElement)
-      //     imgElement.src = this.imageUrl;
+        // const imgElement = document.getElementById('offre-image') as HTMLImageElement;
+        // console.log(imgElement)
+        // if (imgElement)
+        //   imgElement.src = this.imageUrl;
       })
+
+      console.log(this.offre)
 
     }
     

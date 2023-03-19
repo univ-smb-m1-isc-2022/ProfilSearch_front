@@ -1,7 +1,9 @@
 <div class="job-offer" routerLink="/offre/{{offre.id}}">
-    <div class="job-offer__image">
-      <img src="https://prod.ucwe.capgemini.com/nl-nl/wp-content/uploads/sites/19/2022/11/cg-logo_new.webp?w=330" alt="Job offer">
+    <div class="job-offer__image" >
+      <img *ngIf="!offre.image" src="https://prod.ucwe.capgemini.com/nl-nl/wp-content/uploads/sites/19/2022/11/cg-logo_new.webp?w=330" alt="Job offer">
+      <img *ngIf="offre.image" id="offre-image{{offre.id}}" alt="Job offer">
     </div>
+
     <div class="job-offer__info">
       <div class="job-offer__title">
         <h3 class="job-title">{{offre.name}}</h3>

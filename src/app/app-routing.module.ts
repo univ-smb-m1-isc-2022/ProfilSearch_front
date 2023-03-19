@@ -17,27 +17,27 @@ const routes: Routes = [
   { 
     path: '', 
     component : DashboardComponent,
-    data: { animation: 'HomePage' }
+    // data: { animation: 'HomePage' }
   },
   {
     path: 'login',
     component : LoginPageComponent,
-    data : { animation: 'LoginPage' }
+    // data : { animation: 'LoginPage' }
   },
   { 
     path: 'admin', 
     component : DashboardAdminComponent,
-    data: { animation: 'AdminPage' }
+    // data: { animation: 'AdminPage' }
   },
   { 
     path: 'offre/:id', 
     component : PageOffreComponent ,
-    data : { animation: 'OffrePage' }
+    // data : { animation: 'OffrePage' }
   },
   {
     path: 'createoffre',
     component : CreateOffreComponent,
-    data : { animation: 'CreateOffrePage' }
+    // data : { animation: 'CreateOffrePage' }
   },
   {
     path: 'offre-admin/:id',
