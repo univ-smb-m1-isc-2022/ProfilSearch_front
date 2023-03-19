@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 // import { SocialLoginModule, SocialAuthServiceConfig, GoogleLoginProvider } from 'angularx-social-login';
 import {MatIconModule} from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,6 +54,7 @@ import { InvitePageComponent } from './Component-Admin/invite-page/invite-page.c
     HttpClientModule,
     FormsModule,
     MatDialogModule,
+    MatSlideToggleModule,
     // SocialLoginModule,
     MatIconModule
   ],
