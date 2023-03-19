@@ -12,7 +12,9 @@ export class Offre {
         public type: string,
         public place: string,
         public questions: Question[],
-        public image: number[]
+        public image: number[],
+        public imageUrl: string,
+        public published: boolean,
         
     ){
     }
