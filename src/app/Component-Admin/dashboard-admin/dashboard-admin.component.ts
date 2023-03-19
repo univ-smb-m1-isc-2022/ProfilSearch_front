@@ -4,6 +4,8 @@ import { Offre } from 'src/app/models/offre.model';
 import { LocalService } from 'src/app/services/local.service';
 import { OffresService } from 'src/app/services/offres.services';
 import { Route, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.services';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -13,17 +15,18 @@ import { Route, Router } from '@angular/router';
 export class DashboardAdminComponent implements OnInit {
 
   offres$!: Observable<Offre[]>;
+  users!: User[];
 
   name: string = '';
   email: string = '';
   imageUrl: string = '';
   
 
-  constructor(private offresService: OffresService, private localService: LocalService, private cd: ChangeDetectorRef, private router: Router) {
+  constructor(private offresService: OffresService, private localService: LocalService, private cd: ChangeDetectorRef, private router: Router, private authService: AuthService) { }
     // if (this.localService.getData('name') == null) {
     //   location.reload();
     // }
-   }
+  //  }
 
   
 
@@ -49,6 +52,15 @@ export class DashboardAdminComponent implements OnInit {
     console.log('name:', this.name)
     console.log('email:', this.email)
     console.log('imageUrl:', this.imageUrl)
+
+    this.authService.getAllUsers().subscribe(
+      (data) => {
+        this.users = data;
+      }
+    )
+
+
+
 
     // forcer un refresh de la page
     this.cd.detectChanges();
