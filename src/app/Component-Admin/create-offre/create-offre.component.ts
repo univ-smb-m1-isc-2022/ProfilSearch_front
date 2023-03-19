@@ -67,6 +67,17 @@ export class CreateOffreComponent implements OnInit {
     })
   }
 
+  onFileSelected(event : any) {
+      const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = () => {
+    const arrayBuffer = reader.result as ArrayBuffer;
+    const byteArray = new Uint8Array(arrayBuffer);
+    this.offre.image = Array.from(byteArray);
+  };
+  reader.readAsArrayBuffer(file);
+  }
+
   addBulletPoint() {
     this.bulletPoints.push('');
     console.log(this.bulletPoints)
