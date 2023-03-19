@@ -13,8 +13,9 @@ export class CreateOffreComponent implements OnInit {
 
   constructor(private offresService: OffresService, private questionsService : QuestionsService) { }
 
-  offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', []);
+  offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], []);
   newQuestion: Question = new Question(0, '');
+  bulletPoints: string[] = [];
 
   // liste de questions
   listquestions: Question[] = [];
@@ -25,6 +26,7 @@ export class CreateOffreComponent implements OnInit {
     this.questionsService.getAllQuestions().subscribe((listquestions) => {
       this.listquestions = listquestions;
     })
+    this.bulletPoints = ['', '', ''];
   }
 
   creerOffre() {
@@ -63,6 +65,11 @@ export class CreateOffreComponent implements OnInit {
       this.listquestions.push(newQuestion);
       this.newQuestion = new Question(0, '');
     })
+  }
+
+  addBulletPoint() {
+    this.bulletPoints.push('');
+    console.log(this.bulletPoints)
   }
 
 }
