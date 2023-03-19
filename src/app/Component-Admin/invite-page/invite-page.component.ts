@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Invitation } from 'src/app/models/invitation.model';
+import { InvitationService } from 'src/app/services/invitation.services';
 
 @Component({
   selector: 'app-invite-page',
@@ -8,15 +9,25 @@ import { Invitation } from 'src/app/models/invitation.model';
 })
 export class InvitePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private invitationService: InvitationService) { }
 
   invitation: Invitation = new Invitation(0, '');
+  
 
   ngOnInit(): void {
   }
 
   invite() {
-    console.log(this.invitation)
+    // this.invitationService.createInvitation(this.invitation).subscribe((invitation) => {
+    //   this.invitation = invitation;
+    // }
+    // )
+    // ajoute un message de confirmation
+    var div = document.getElementById("confirmation") as HTMLDivElement;
+    div.innerHTML = "Invitation envoyée";
+
+
+    
   }
 
 }
