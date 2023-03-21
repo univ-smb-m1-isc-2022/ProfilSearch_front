@@ -22,14 +22,14 @@ section {
         }
     }
 
-    .offre-question, .offre-descritpion{
+    .offre-question, .offre-descritpion, .offre-bullet{
         margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        .offre-question-title{
+        .offre-question-title, .offre-question-title{
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;

@@ -29,14 +29,15 @@
                 <textarea name="answer" class="offre-question-answer" cols="30" rows="10" [(ngModel)]="offre.description"></textarea>
             </div>
             <div class="offre-bullet">
-                <span class="offre-question-title">Compétences</span>
-                <div class="offre-question" *ngFor="let bullet of bulletPoints; let i = index;">
+                <span class="offre-question-title">Informations additionnelles</span>
+                <div class="offre-bullet" *ngFor="let bulletControl of bulletControls; let i = index;">
                     <ul class="offre-question-answer">
                         <li>
-                            <input type="text" [(ngModel)]="bulletPoints[i]"/>
+                            <input type="text" [formControl]="bulletControl" />
                         </li>
                     </ul>
                 </div>
+
                 <button class="button" (click)="addBulletPoint()">
                     <span class="material-icons">
                         add

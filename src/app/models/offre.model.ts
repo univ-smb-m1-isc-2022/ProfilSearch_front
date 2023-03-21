@@ -15,7 +15,7 @@ export class Offre {
         public image: number[],
         public imageUrl: string,
         public published: boolean,
-        
+        public bullets: string[] = []       
     ){
     }
 

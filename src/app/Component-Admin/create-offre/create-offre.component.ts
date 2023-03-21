@@ -4,6 +4,7 @@ import { OffresService } from '../../services/offres.services';
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../services/questions.services';
 import { Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-create-offre',
@@ -17,6 +18,7 @@ export class CreateOffreComponent implements OnInit {
   offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], [], '', true);
   newQuestion: Question = new Question(0, '');
   bulletPoints: string[] = [];
+  bulletControls: FormControl[] = [];
 
   // liste de questions
   listquestions: Question[] = [];
@@ -28,9 +30,23 @@ export class CreateOffreComponent implements OnInit {
       this.listquestions = listquestions;
     })
     this.bulletPoints = ['', '', ''];
+
+    this.bulletPoints.forEach(bullet => {
+      this.bulletControls.push(new FormControl(bullet));
+    });
+
   }
 
   creerOffre() {
+    console.log(this.offre)
+    for (let i = 0; i < this.bulletControls.length; i++) {
+      this.offre.bullets.push(this.bulletControls[i].value);
+    }
+
+    // enlever les bullet points vides
+    this.offre.bullets = this.offre.bullets.filter(bullet => bullet !== '');
+
+
     console.log(this.offre)
     this.offresService.createOffre(this.offre).subscribe((offre) => {
       this.offre = offre;
@@ -82,7 +98,7 @@ export class CreateOffreComponent implements OnInit {
 
   addBulletPoint() {
     this.bulletPoints.push('');
-    console.log(this.bulletPoints)
+    this.bulletControls.push(new FormControl(''));
   }
 
 }
