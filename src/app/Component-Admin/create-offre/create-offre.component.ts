@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../services/questions.services';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalCreateQuestionComponent } from '../modal-create-question/modal-create-question.component';
 
 @Component({
   selector: 'app-create-offre',
@@ -13,7 +15,7 @@ import { FormControl } from '@angular/forms';
 })
 export class CreateOffreComponent implements OnInit {
 
-  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router) { }
+  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router, private dialog: MatDialog) { }
 
   offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], [], '', true);
   newQuestion: Question = new Question(0, '');
@@ -79,10 +81,16 @@ export class CreateOffreComponent implements OnInit {
   }
 
   createQuestion() {
-    this.questionsService.createQuestion(this.newQuestion).subscribe((newQuestion) => {
-      this.listquestions.push(newQuestion);
-      this.newQuestion = new Question(0, '');
+    var dialogRef = this.dialog.open(ModalCreateQuestionComponent);
+
+    dialogRef.afterClosed().subscribe((question) => {
+      if (question) {
+        this.listquestions.push(question);
+      }
     })
+
+    
+
   }
 
   onFileSelected(event : any) {

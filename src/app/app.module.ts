@@ -28,6 +28,7 @@ import { AuthService } from './services/auth.services';
 import { OAuth2RedirectHandlerComponent } from './Component-Admin/oauth2-redirect-handler-component/oauth2-redirect-handler-component.component';
 import { SignupPageComponent } from './Component-Admin/signup-page/signup-page.component';
 import { InvitePageComponent } from './Component-Admin/invite-page/invite-page.component';
+import { ModalCreateQuestionComponent } from './Component-Admin/modal-create-question/modal-create-question.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,8 @@ import { InvitePageComponent } from './Component-Admin/invite-page/invite-page.c
     DeleteCandidatureComponent,
     OAuth2RedirectHandlerComponent,
     SignupPageComponent,
-    InvitePageComponent
+    InvitePageComponent,
+    ModalCreateQuestionComponent
   ],
   imports: [
     BrowserModule,

@@ -20,16 +20,17 @@ section {
             width: fit-content;
             margin-top: 0.5rem;
         }
+
     }
 
-    .offre-question, .offre-descritpion, .offre-bullet{
+    .offre-question, .offre-descritpion, .offre-bullet, .offre-questions, .offre-options{
         margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        .offre-question-title, .offre-question-title{
+        .offre-question-title {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -56,6 +57,16 @@ section {
         input:focus {
             outline: none;
         }
+
+        input[type="file"] {
+            height:50px;
+            margin-top:1rem;
+        }
+
+        .toggle {
+            margin-bottom:1rem;
+        }
+
         .select {
             width: 100%;
             border: 1px solid var(--color-grey);
@@ -87,6 +98,13 @@ section {
             width: 90%;
         }
     }
+
+    .rounded {
+        border-radius: 20%;
+                .rounded {
+            border-radius: 5px;
+        }
+    }
     .button {
         background-color: var(--color-lg-red);
         color: var(--color-white);
@@ -96,6 +114,8 @@ section {
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+
+        
 
         &:hover {
             background-color: var(--color-lg-red);

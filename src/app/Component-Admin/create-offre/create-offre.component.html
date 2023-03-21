@@ -28,6 +28,7 @@
                 <span class="offre-question-title">Description de l'offre</span>
                 <textarea name="answer" class="offre-question-answer" cols="30" rows="10" [(ngModel)]="offre.description"></textarea>
             </div>
+            <hr/>
             <div class="offre-bullet">
                 <span class="offre-question-title">Informations additionnelles</span>
                 <div class="offre-bullet" *ngFor="let bulletControl of bulletControls; let i = index;">
@@ -38,20 +39,21 @@
                     </ul>
                 </div>
 
-                <button class="button" (click)="addBulletPoint()">
+                <button class="button rounded" (click)="addBulletPoint()">
                     <span class="material-icons">
                         add
                     </span>
                 </button>
             </div>
+            <hr />
             <div class="offre-questions">
+                <span class="offre-question-title">Questions</span>
                 <div class="offre-question" *ngFor="let question of getQuestionsArray(nbQuestion); let i = index;">
                     <span class="offre-question-title">Question {{ i+1 }}</span>
                 <select class="select" (change)="modifierQuestion(i, $event)">
                     <option *ngFor="let question of listquestions" [value]="question.question">{{ question.question }}</option>
                     </select>
                 </div>
-                <input type="file" (change)="onFileSelected($event)">
 
                 <div class="offre-question">
                     <div class="button" (click)="ajouterQuestion()">
@@ -60,15 +62,19 @@
                 </div>        
             </div>
             <div class="create-question">
-                <input type="text" [(ngModel)]="newQuestion.question">
                 <div class="button" (click)="createQuestion()">
                     <span>Créer une question</span>
                 </div>
             </div>
 
-                <mat-slide-toggle [(ngModel)]="this.offre.published">
+            <div class="offre-options">
+                <span class="offre-question-title">Options de l'offre</span>
+                <mat-slide-toggle [(ngModel)]="this.offre.published" class="toggle">
                     Visible publiquement
                 </mat-slide-toggle>
+                <h3>Choisir un fichier (optionnel)</h3>
+                <input type="file" (change)="onFileSelected($event)">
+            </div>
         </div>
         <div class="creer-offre">
             <div class="button" (click)="creerOffre()">
