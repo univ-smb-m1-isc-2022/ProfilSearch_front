@@ -52,23 +52,27 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
 
         const imgElement = document.getElementById('offre-image') as HTMLImageElement;
 
-        if (imgElement && this.offre.imageUrl)
+        if (imgElement && this.offre.image) {
           imgElement.src = this.offre.imageUrl;
-              
-        const blob = new Blob([new Uint8Array(this.offre.image)], { type: 'image/jpeg' });
-        const imageUrl = URL.createObjectURL(blob);
+          const blob = new Blob([new Uint8Array(this.offre.image)], { type: 'image/jpeg' });
+          const imageUrl = URL.createObjectURL(blob);
 
-        this.offre.imageUrl = imageUrl;
+          this.offre.imageUrl = imageUrl;
+          imgElement.src = this.offre.imageUrl;
 
-        imgElement.src = this.offre.imageUrl;
+          this.imageFile = this.base64ToBlob(this.offre.image.toString());
+          this.imageUrl = URL.createObjectURL(this.imageFile);
+
+
+        } else {
+          var div = document.getElementById('div-image');
+          if (div)
+            div.style.display = 'none';
+        }
           
-          console.log("Questions :: " + offre.questions.at(0))
-
         for (let i = 0; i < this.offre.questions.length; i++) {
           this.candidature.reponses.push(new Reponse(0, '', this.offre.questions[i]));
         }
-        this.imageFile = this.base64ToBlob(this.offre.image.toString());
-        this.imageUrl = URL.createObjectURL(this.imageFile);
 
         // const imgElement = document.getElementById('offre-image') as HTMLImageElement;
         // console.log(imgElement)
