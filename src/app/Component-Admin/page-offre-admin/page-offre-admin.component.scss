@@ -87,6 +87,22 @@ section {
                     margin-bottom: 1rem;
                 }
 
+                .div-image {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 1rem;
+
+                    #offre-image {
+                        // width: 50%;
+                        height: 300px;
+                        max-height: 300px;
+                        max-width: 100%;
+                        object-fit: cover;
+                        margin-bottom: 1rem;
+                    }
+                }
+
                 .offre-questions {
                     .infos-perso {
                         margin: 2rem 0 2rem 0;
