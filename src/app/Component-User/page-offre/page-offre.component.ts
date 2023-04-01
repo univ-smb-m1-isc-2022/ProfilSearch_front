@@ -7,6 +7,8 @@ import { Candidature } from '../../models/candidature.model';
 import { CandidaturesService } from '../../services/candidatures.services';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy } from '@angular/compiler';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalConfirmationComponent } from '../modal-confirmation/modal-confirmation.component';
 
 @Component({
   selector: 'app-page-offre',
@@ -21,7 +23,7 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
   imageFile = new Blob();
   imageUrl = '';
 
-  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService, private cdRef: ChangeDetectorRef) { }
+  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService, private cdRef: ChangeDetectorRef, private dialogRef: MatDialog) { }
 
   ngAfterViewInit(): void {
     console.log("ngAfterViewInit")
@@ -101,11 +103,21 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
     console.log("Postuler");
     this.candidature.offre.id = this.offre.id;
 
+    this.openDialog();
     this.candidaturesService.createCandidature(this.candidature).subscribe((candidature) => {
       console.log("Candidature :: " + candidature);
     })
-
   }
+    
+openDialog(): void {
+  const dialog = this.dialogRef.open(ModalConfirmationComponent, {
+    disableClose: true
+  });
+}
+
+
+
+
 
 
 getOffreImageURL(): string {

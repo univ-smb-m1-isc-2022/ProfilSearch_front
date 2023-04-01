@@ -29,6 +29,7 @@ import { OAuth2RedirectHandlerComponent } from './Component-Admin/oauth2-redirec
 import { SignupPageComponent } from './Component-Admin/signup-page/signup-page.component';
 import { InvitePageComponent } from './Component-Admin/invite-page/invite-page.component';
 import { ModalCreateQuestionComponent } from './Component-Admin/modal-create-question/modal-create-question.component';
+import { ModalConfirmationComponent } from './Component-User/modal-confirmation/modal-confirmation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import { ModalCreateQuestionComponent } from './Component-Admin/modal-create-que
     OAuth2RedirectHandlerComponent,
     SignupPageComponent,
     InvitePageComponent,
-    ModalCreateQuestionComponent
+    ModalCreateQuestionComponent,
+    ModalConfirmationComponent
   ],
   imports: [
     BrowserModule,
