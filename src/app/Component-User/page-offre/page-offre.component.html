@@ -42,18 +42,20 @@
                 <div class="offre-questions">
                     <div class="infos-perso">
                         <h1 class="title">Informations personnelles</h1>
-                        <p class="subtitle">Renseigner ici vos informations personnelles pour que nos agents puissent vous recontatcter.</p>
-                        <div class="info">
-                            <span>Nom</span>
-                            <input type="text" id="name"  [(ngModel)]="candidature.name" required>
-                        </div>
-                        <div class="info">
-                            <span>Prénom</span>
-                            <input type="text" id="fname" [(ngModel)]="candidature.fname" required>
-                        </div>
-                        <div class="info">
-                            <span>Email</span>
-                            <input type="text" id="email" [(ngModel)]="candidature.email" required>
+                        <p class="subtitle">Renseigner ici vos informations personnelles pour que nos agents puissent vous recontacter.</p>
+                        <div class="infos">
+                            <div class="info">
+                                <span>Prénom</span>
+                                <input type="text" id="fname" [(ngModel)]="candidature.fname" required>
+                            </div>
+                            <div class="info">
+                                <span>Nom</span>
+                                <input type="text" id="name"  [(ngModel)]="candidature.name" required>
+                            </div>
+                            <div class="info">
+                                <span>Email</span>
+                                <input type="text" id="email" [(ngModel)]="candidature.email" required>
+                            </div>
                         </div>
                     </div>
                     <h1 id="postuler">Questions</h1>
