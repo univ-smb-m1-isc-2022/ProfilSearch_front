@@ -109,6 +109,23 @@ export class PageOffreAdminComponent implements OnInit, AfterViewInit {
   return URL.createObjectURL(blob);
 }
 
+  formatDate() {
+    var date = new Date(this.offre.creation_date);
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    var monthString = '' + month;
+    var dayString = '' + day;
+    if (day < 10) {
+      dayString = '0' + day;
+    }
+    if (month < 10) {
+      monthString = '0' + month;
+    }
+    
+    return dayString + '/' + monthString + '/' + year;
+  }
 
 
 }
