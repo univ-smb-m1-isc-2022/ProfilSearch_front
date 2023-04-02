@@ -29,6 +29,7 @@ section {
                         border-bottom: 1px solid var(--color-lg-red);
                     }
                 }
+
                 .offre-infos{
                     display: flex;
                     flex-direction: column;
@@ -88,6 +89,38 @@ section {
                     object-fit: cover;
                     margin-bottom: 1rem;
                 }
+                }
+
+                .offre-description{
+                    .bullets-points {
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+
+                        ul {
+                            list-style: none;
+                            margin-left: 0;
+                            padding-left: 0;
+                        }
+
+                        li {
+                            position: relative;
+                            padding-left: 25px;
+                            margin-bottom: 15px;
+                            font-size: 18px;
+                            line-height: 1.5;
+                        }
+
+                        li:before {
+                            content: "\2022";
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            color: #F55050;
+                            font-size: 24px;
+                        }
+                    }
+
                 }
 
                 .offre-questions{

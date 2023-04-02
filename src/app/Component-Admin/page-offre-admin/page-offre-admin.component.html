@@ -29,7 +29,15 @@
                 <h1>Description du poste</h1>
                 <div class="offre-description">
                     <p>{{ offre.description }}</p>
+                    <!-- afficher la liste de bullets points -->
+                    <div class="bullets-points">
+                        <ul>
+                            <li *ngFor="let bullet of offre.bullets">{{ bullet }}</li>
+                        </ul>
+                    </div>
                 </div>
+
+                
                 <div class="offre-questions">
                     <h1 id="postuler">Questions</h1>
                     <div *ngFor="let question of offre.questions; let i= index" class="offre-question">
