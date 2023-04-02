@@ -2,10 +2,23 @@
     width: 80vh;
     height: 90vh;
 
+    .image{
+        img {
+            width: 20%;
+            height: 20%;
+        }
+
+    }
+
     .title {
         display:flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
+
+        .name {
+            color: var(--color-lg-red);
+        }
     }
 
     .infos {
@@ -23,12 +36,19 @@
             .question-title{
                 display:flex;
                 font-size: large;
-                border-bottom: 2px solid var(--color-lg-red);
+                // border-bottom: 2px solid var(--color-lg-red);
                 margin-bottom: 1vh;
             }
 
+            .reponse{
+                width: 100%;
+                height: fit-content;
+                min-height: 10vh;
+                padding: 1vh;
+                border: 1px solid var(--color-lg-red);
             .question-reponse{
                 display:flex;
+            }
             }
         }
     }

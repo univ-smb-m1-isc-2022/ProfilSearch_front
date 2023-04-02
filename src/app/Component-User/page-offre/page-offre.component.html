@@ -60,10 +60,12 @@
                     </div>
                     <h1 id="postuler">Questions</h1>
                     <p>Voici quelques questions pour nous aider à mieux vous connaître avant un futur entretien.</p>
-                    <div *ngFor="let question of offre.questions; let i= index" class="offre-question">
-                        <span class="offre-question-title">{{ question["question"] }}</span>
-                        <div class="question-answer">
-                            <input type="text" id="{{question['id']}}" [(ngModel)]="candidature.reponses[i].reponse"/>
+                    <div class="questions">
+                        <div *ngFor="let question of offre.questions; let i= index" class="offre-question">
+                            <span class="offre-question-title">{{ question["question"] }}</span>
+                            <div class="question-answer">
+                                <textarea id="{{question['id']}}" name="{{question['id']}}" [(ngModel)]="candidature.reponses[i].reponse"></textarea>
+                            </div>
                         </div>
                     </div>
                     <div class="postuler-offre">

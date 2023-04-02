@@ -163,12 +163,14 @@ section {
                         flex-direction: column;
                         align-items: flex-start;
                         justify-content: center;
+                        
                         .offre-question-title{
                             font-size: 1.3rem;
                             font-weight: 700;
-                            margin-bottom: 0.5rem;
+                            margin-bottom: 1rem;
                         }
                         textarea {
+                            margin-top: 1rem;
                             width: 100%;
                             height: 100px;
                             max-height: 200px;

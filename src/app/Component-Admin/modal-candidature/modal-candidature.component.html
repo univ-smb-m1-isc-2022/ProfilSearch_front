@@ -1,6 +1,11 @@
 <div class="container">
+    <div class="image">
+            <img class="google" src="../../../assets/images/cv.png" alt="cv">
+    </div>
+
     <div class="title">
-        <h2 class="name">Candidature de {{candidature.fname}} {{ candidature.name}}  </h2>
+        <h2 class="title">Candidature de &nbsp;</h2>
+        <h2 class="name">{{candidature.fname}} {{ candidature.name}}  </h2>
     </div>
 
     <div class="infos">
@@ -11,7 +16,9 @@
         <h2>Questions</h2>
         <div class="question" *ngFor="let question of candidature.reponses; let i= index">
             <p class="question-title">{{question.question.question}}</p>
-            <p class="question-reponse">{{question.reponse}}</p>
+            <div class="reponse">
+                <p class="question-reponse">{{question.reponse}}</p>
+            </div>
         </div>
 
     </div>
