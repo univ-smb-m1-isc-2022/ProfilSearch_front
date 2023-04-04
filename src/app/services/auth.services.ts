@@ -55,7 +55,7 @@ export class AuthService {
   }
 
   getAllUsers(): Observable<User[]> {
-    var url = this.constantes.API_BASE_URL + "profilsearch/user/all";
+    var url = this.constantes.API_BASE_URL + "/profilsearch/user/all";
     return this.http.get<User[]>(url);
   }
 
