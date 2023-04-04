@@ -48,6 +48,12 @@ export class DashboardAdminComponent implements OnInit {
       
 
     if (this.localService.getData('accessToken')) {
+
+      var token = this.localService.getData('accessToken') as string;
+
+      this.authService.getUserInfo(token);
+
+
       console.log('name:', this.localService.getData('name'))
       this.name = this.localService.getData('name') as string;
       this.email = this.localService.getData('email') as string;
