@@ -11,7 +11,7 @@ export class Constantes {
     // GOOGLE_AUTH_URL = 'http://localhost:8080' + '/oauth2/authorize/google?redirect_uri=' + 'http://localhost:3000/oauth2/redirect'
     // GOOGLE_AUTH_URL = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:3000/oauth2/redirect?invite_link=";
 
-    GOOGLE_AUTH_URL = 'https://profilsearch.api.oups.net/oauth2/authorize/google?redirect_uri=http://https://profilsearch.oups.net/oauth2/redirect';
+    GOOGLE_AUTH_URL = 'https://profilsearch.api.oups.net/oauth2/authorize/google?redirect_uri=https://profilsearch.oups.net/oauth2/redirect';
 
     
 }
