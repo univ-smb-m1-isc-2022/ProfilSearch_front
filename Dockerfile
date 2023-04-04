@@ -18,6 +18,8 @@ FROM nginx:alpine
 # Copie les fichiers construits de l'application dans Nginx
 COPY --from=node /app/dist/profilsearch /usr/share/nginx/html
 
+COPY nginx.conf /etc/nginx/nginx.conf
+
 # Démarre Nginx pour servir l'application
 CMD ["nginx", "-g", "daemon off;"]
 
