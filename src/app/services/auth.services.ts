@@ -91,7 +91,7 @@ export class AuthService {
       }),
     };
 
-    var url = this.constantes.API_BASE_URL + "profilsearch/user/me";
+    var url = this.constantes.API_BASE_URL + "/profilsearch/user/me";
     return this.http.get(url, httpOptions).subscribe(
       (response) => {
         console.log(response);
