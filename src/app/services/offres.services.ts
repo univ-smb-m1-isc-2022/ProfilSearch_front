@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Offre } from '../models/offre.model';
 import { map } from 'rxjs/operators';
+import { Constantes } from '../constantes';
 
 @Injectable ({
     providedIn: 'root'
@@ -11,10 +12,11 @@ import { map } from 'rxjs/operators';
 export class OffresService {
 
     // constructor() { }
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private constantes : Constantes) { }
 
-    getAllOffres(): Observable<Offre[]> {
-        var offres = this.http.get<Offre[]>('http://localhost:8080/profilsearch/offre/all');
+  getAllOffres(): Observable<Offre[]> {
+      var url = this.constantes.API_BASE_URL + "/profilsearch/offre/all";
+        var offres = this.http.get<Offre[]>(url);
         offres.forEach(offre => {
             offre.forEach(offreU => {
                 if (offreU.image != null) {
@@ -29,8 +31,9 @@ export class OffresService {
         return offres;
     }
 
-getOffreById(id: string): Observable<Offre> {
-  return this.http.get<Offre>('http://localhost:8080/profilsearch/offre/' + id).pipe(
+  getOffreById(id: string): Observable<Offre> {
+    var url = this.constantes.API_BASE_URL + "/profilsearch/offre/" + id;
+  return this.http.get<Offre>(url).pipe(
     map((offreU: Offre) => {
     //   console.log("ici");
     //   console.log(offreU.image);
@@ -46,8 +49,9 @@ getOffreById(id: string): Observable<Offre> {
   );
 }
 
-    createOffre(offre: Offre): Observable<Offre> {
-        return this.http.post<Offre>('http://localhost:8080/profilsearch/offre/create', offre);
+  createOffre(offre: Offre): Observable<Offre> {
+      var url = this.constantes.API_BASE_URL + "/profilsearch/offre/create";
+        return this.http.post<Offre>(url, offre);
     }
 
     base64ToBlob(base64: string): Blob {

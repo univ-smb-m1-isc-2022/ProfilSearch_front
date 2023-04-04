@@ -21,8 +21,10 @@ export class LoginPageComponent implements OnInit {
 
   const inviteLink = 'https://example.com/invite/1234';
   const redirectUri = 'http://localhost:3000/oauth2/redirect?invite_link=' + inviteLink;
-    this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=' + encodeURIComponent(redirectUri);
-    this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:3000/oauth2/redirect';
+    // this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=' + encodeURIComponent(redirectUri);
+    // this.authUrl = 'http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:3000/oauth2/redirect';
+
+    this.authUrl = 'https://profilsearch.api.oups.net/oauth2/authorize/google?redirect_uri=http://https://profilsearch.oups.net/oauth2/redirect';
 
     this.error = this.router.parseUrl(this.router.url).queryParams['error'];
     console.log(this.error)
@@ -61,8 +63,8 @@ export class LoginPageComponent implements OnInit {
           .set('additional_param_1', 'value1')
           .set('additional_param_2', 'value2');
         
-    const baseUrl = 'http://localhost:8080/oauth2/authorize/google';
-    const redirectUri = 'http://localhost:3000/oauth2/redirect';
+    const baseUrl = 'https://profilsearch.api.oups.net/oauth2/authorize/google';
+    const redirectUri = 'https://profilsearch.oups.net/oauth2/redirect';
     const url = `${baseUrl}?redirect_uri=${encodeURIComponent(redirectUri)}&${params.toString()}`;
     
     location.href = url;

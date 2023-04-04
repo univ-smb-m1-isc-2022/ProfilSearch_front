@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Cons, Observable } from 'rxjs';
 import { Question } from '../models/question.model';
+import { Constantes } from '../constantes';
 
 @Injectable ({
     providedIn: 'root'
@@ -10,14 +11,16 @@ import { Question } from '../models/question.model';
 export class QuestionsService {
 
     // constructor() { }
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private constantes : Constantes) { }
 
     getAllQuestions(): Observable<Question[]> {
-        return this.http.get<Question[]>('http://localhost:8080/profilsearch/question/all');
+        var url = this.constantes.API_BASE_URL + "/profilsearch/question/all";
+        return this.http.get<Question[]>(url);
     }
 
     createQuestion(question: Question): Observable<Question> {
-        return this.http.post<Question>('http://localhost:8080/profilsearch/question/create', question);
+        var url = this.constantes.API_BASE_URL + "/profilsearch/question/create";
+        return this.http.post<Question>(url, question);
     }
 
 }

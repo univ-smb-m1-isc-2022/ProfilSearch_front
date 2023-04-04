@@ -55,7 +55,8 @@ export class AuthService {
   }
 
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>("http://localhost:8080/profilsearch/user/all");
+    var url = this.constantes.API_BASE_URL + "profilsearch/user/all";
+    return this.http.get<User[]>(url);
   }
 
   login(loginRequest: any): Observable<any> {
@@ -90,7 +91,8 @@ export class AuthService {
       }),
     };
 
-    return this.http.get("http://localhost:8080/profilsearch/user/me", httpOptions).subscribe(
+    var url = this.constantes.API_BASE_URL + "profilsearch/user/me";
+    return this.http.get(url, httpOptions).subscribe(
       (response) => {
         console.log(response);
 
