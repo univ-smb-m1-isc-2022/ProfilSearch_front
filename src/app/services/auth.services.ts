@@ -84,6 +84,9 @@ export class AuthService {
   }
 
   getUserInfo(token: string) {
+
+    console.log("my token is " + token)
+    
         const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
