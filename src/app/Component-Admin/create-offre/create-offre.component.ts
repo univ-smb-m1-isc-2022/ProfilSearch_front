@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalCreateQuestionComponent } from '../modal-create-question/modal-create-question.component';
+import { ModalConfirmationComponent } from 'src/app/Component-User/modal-confirmation/modal-confirmation.component';
 
 @Component({
   selector: 'app-create-offre',
@@ -15,7 +16,7 @@ import { ModalCreateQuestionComponent } from '../modal-create-question/modal-cre
 })
 export class CreateOffreComponent implements OnInit {
 
-  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router, private dialog: MatDialog) { }
+  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router, private dialog: MatDialog, private dialogRef: MatDialog) { }
 
   offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], [], '', true);
   newQuestion: Question = new Question(0, '');
@@ -54,6 +55,7 @@ export class CreateOffreComponent implements OnInit {
       this.offre = offre;
     }
     )
+    this.openDialog();
     // this.router.navigate(['/admin']);
   }
 
@@ -108,5 +110,17 @@ export class CreateOffreComponent implements OnInit {
     this.bulletPoints.push('');
     this.bulletControls.push(new FormControl(''));
   }
+
+  openDialog(): void {
+    const dialog = this.dialogRef.open(ModalConfirmationComponent, {
+
+    data: {
+      redirectTo: '/admin',
+      confirmationText: 'Votre offre a bien été crée.'
+    },
+    disableClose: true
+  });
+}
+
 
 }
