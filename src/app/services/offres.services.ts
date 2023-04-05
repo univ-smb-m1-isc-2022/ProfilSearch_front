@@ -37,13 +37,13 @@ export class OffresService {
     map((offreU: Offre) => {
     //   console.log("ici");
     //   console.log(offreU.image);
-      if (offreU.image != null) {
+      // if (offreU.image != null) {
         // console.log("la");
-        var imageFile = this.base64ToBlob(offreU.image.toString());
-        var imageUrl = this.createImageUrlFromBlob(imageFile);
-        offreU.imageUrl = imageUrl;
+        // var imageFile = this.base64ToBlob(offreU.image.toString());
+        // var imageUrl = this.createImageUrlFromBlob(imageFile);
+        // offreU.imageUrl = imageUrl;
         // console.log("set image url");
-      }
+      // }
       return offreU;
     })
   );

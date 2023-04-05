@@ -65,6 +65,8 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
           this.imageFile = this.base64ToBlob(this.offre.image.toString());
           this.imageUrl = URL.createObjectURL(this.imageFile);
 
+          console.log("url : " + this.imageUrl)
+
 
         } else {
           var div = document.getElementById('div-image');

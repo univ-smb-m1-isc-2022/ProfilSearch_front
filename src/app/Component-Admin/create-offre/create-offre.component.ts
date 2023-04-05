@@ -54,7 +54,7 @@ export class CreateOffreComponent implements OnInit {
       this.offre = offre;
     }
     )
-    this.router.navigate(['/admin']);
+    // this.router.navigate(['/admin']);
   }
 
   ajouterQuestion() {
