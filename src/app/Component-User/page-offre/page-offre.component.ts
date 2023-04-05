@@ -113,6 +113,11 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
     
 openDialog(): void {
   const dialog = this.dialogRef.open(ModalConfirmationComponent, {
+
+    data: {
+      redirectTo: '/',
+      confirmationText: 'Votre candidature a bien été envoyée.'
+    },
     disableClose: true
   });
 }
