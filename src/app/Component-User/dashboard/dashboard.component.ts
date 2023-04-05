@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
 
     this.offres$ = this.offresService.getAllOffres();
     this.offresAffiches$ = this.offres$;
+    this.sortOffre();
   }
 
   search() {
@@ -28,6 +29,14 @@ export class DashboardComponent implements OnInit {
       map(offres => offres.filter(offre => offre.name.toLowerCase().includes(this.searchTerm.toLowerCase())))
     );
     console.log(this.offresAffiches$)
+  }
+
+  sortOffre() {
+    this.offresAffiches$ = this.offres$.pipe(
+      map(offres => offres.filter(offre => offre.published === true))
+    );
+
+
   }
 
 

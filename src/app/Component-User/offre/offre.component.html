@@ -7,13 +7,12 @@
     <div class="job-offer__info">
       <div class="job-offer__title">
         <h3 class="job-title">{{offre.name}}</h3>
-        <p>Disponible depuis le {{ offre.dateDebut }}</p>
+        <p>Disponible depuis le {{ formatDate() }}</p>
       </div>
-      <h3 class="job-offer__title">{{offre.name}}</h3>
       <div class="job-offer__details">
         <div class="job-offer__type">Type : {{offre.type}}</div>
         <div class="job-offer__salary">Salaire : {{offre.salary}}€</div>
-        <div class="job-offer__date">Date : {{ offre.creation_date }}</div>
+        <!-- <div class="job-offer__date">Date : {{ formatDate() }}</div> -->
       </div>
     </div>
   </div>
