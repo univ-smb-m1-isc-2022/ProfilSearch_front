@@ -8,6 +8,7 @@ section {
     }
 
     .create-question {
+
         input {
             width: 100%;
             height: 30px;
@@ -18,23 +19,59 @@ section {
 
         .button {
             width: fit-content;
-            margin-top: 0.5rem;
+            // margin-top: 0.5rem;
         }
 
     }
 
-    .offre-question, .offre-descritpion, .offre-bullet, .offre-questions, .offre-options{
+    .offre-question, .offre-descritpion, .offre-bullet-container, .offre-questions, .offre-options{
         margin-top: 1rem;
         margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+
+        }
+
         .offre-question-title {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
+
+        .bulletarea {
+            height:4rem;
+        }
+
+        ul {
+        list-style-position: inside;
+        padding-left: 0;
+        margin-top: 0.5rem;
+    }
+
+        li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+
+        li:before {
+            content: "•";
+            margin-right: 0.5rem;
+        }
+        
         textarea {
             width: 100%;
             height: 100px;

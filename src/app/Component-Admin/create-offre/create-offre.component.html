@@ -35,12 +35,12 @@
                 <textarea name="answer" class="offre-question-answer" cols="30" rows="10" [(ngModel)]="offre.description"></textarea>
             </div>
             <hr/>
-            <div class="offre-bullet">
+            <div class="offre-bullet-container">
                 <span class="offre-question-title">Informations additionnelles</span>
-                <div class="offre-bullet" *ngFor="let bulletControl of bulletControls; let i = index;">
+                <div class="offre-bullet-item" *ngFor="let bulletControl of bulletControls; let i = index;">
                     <ul class="offre-question-answer">
-                        <li>
-                            <input type="text" [formControl]="bulletControl" />
+                        <li class="li-area">
+                            <textarea type="text" cols="100" rows="10" class="bulletarea" [formControl]="bulletControl"></textarea>
                         </li>
                     </ul>
                 </div>
@@ -61,18 +61,21 @@
                     </select>
                 </div>
 
-                <div class="offre-question">
-                    <div class="button" (click)="ajouterQuestion()">
-                        <span>Ajouter une question</span>
+                <div class="buttons">
+                    <div class="offre-question">
+                        <div class="button" (click)="ajouterQuestion()">
+                            <span>Ajouter une question</span>
+                        </div>
+                    </div>        
+                
+                    <div class="create-question">
+                        <div class="button" (click)="createQuestion()">
+                            <span>Créer une question</span>
+                        </div>
                     </div>
-                </div>        
-            </div>
-            <div class="create-question">
-                <div class="button" (click)="createQuestion()">
-                    <span>Créer une question</span>
                 </div>
             </div>
-
+            <hr />
             <div class="offre-options">
                 <span class="offre-question-title">Options de l'offre</span>
                 <mat-slide-toggle [(ngModel)]="this.offre.published" class="toggle">
