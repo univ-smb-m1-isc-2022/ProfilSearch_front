@@ -116,7 +116,7 @@ export class CreateOffreComponent implements OnInit {
 
     data: {
       redirectTo: '/admin',
-      confirmationText: 'Votre offre a bien été crée.'
+      confirmationText: 'Votre offre a bien été créée.'
     },
     disableClose: true
   });

@@ -18,10 +18,10 @@ export class InvitePageComponent implements OnInit {
   }
 
   invite() {
-    // this.invitationService.createInvitation(this.invitation).subscribe((invitation) => {
-    //   this.invitation = invitation;
-    // }
-    // )
+    this.invitationService.createInvitation(this.invitation).subscribe((invitation) => {
+      this.invitation = invitation;
+      }
+    )
     // ajoute un message de confirmation
     var div = document.getElementById("confirmation") as HTMLDivElement;
     div.innerHTML = "Invitation envoyée";
