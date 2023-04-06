@@ -45,6 +45,10 @@ export class DashboardAdminComponent implements OnInit {
 
     console.log('name:', this.localService.getData('name'))
 
+    if (this.localService.getData('accessToken') == null) {
+      this.router.navigate(['/login']);
+    }
+
       
 
     if (this.localService.getData('accessToken')) {

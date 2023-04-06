@@ -29,6 +29,11 @@ export class CreateOffreComponent implements OnInit {
   nbQuestion: number = 0;
 
   ngOnInit(): void {
+    
+    if (localStorage.getItem('token') === null) {
+      this.router.navigate(['/login']);
+    }
+
     this.questionsService.getAllQuestions().subscribe((listquestions) => {
       this.listquestions = listquestions;
     })

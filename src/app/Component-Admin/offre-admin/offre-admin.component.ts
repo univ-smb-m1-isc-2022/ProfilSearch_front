@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { Offre } from '../../models/offre.model';
 import { Reponse } from '../../models/reponse.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OffresService } from '../../services/offres.services';
 import { Candidature } from '../../models/candidature.model';
 import { CandidaturesService } from '../../services/candidatures.services';
@@ -17,7 +17,7 @@ export class OffreAdminComponent implements OnInit, AfterViewInit {
   imageFile = new Blob();
   imageUrl = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
   ngAfterViewInit(): void {
   if (this.offre.image != null) {
         this.imageFile = this.base64ToBlob(this.offre.image.toString());
@@ -32,6 +32,12 @@ export class OffreAdminComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+
+    if (localStorage.getItem('accessToken') != null)
+    {
+      this.router.navigate(['/']);
+    }
+
     console.log(this.offre);
   }
 
