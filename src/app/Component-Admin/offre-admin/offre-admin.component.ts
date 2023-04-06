@@ -33,7 +33,7 @@ export class OffreAdminComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    if (localStorage.getItem('accessToken') != null)
+    if (localStorage.getItem('accessToken') == null)
     {
       this.router.navigate(['/']);
     }
