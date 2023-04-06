@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Offre } from '../../models/offre.model';
 import { Reponse } from '../../models/reponse.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OffresService } from '../../services/offres.services';
 import { Candidature } from '../../models/candidature.model';
 import { CandidaturesService } from '../../services/candidatures.services';
@@ -23,7 +23,7 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
   imageFile = new Blob();
   imageUrl = '';
 
-  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService, private cdRef: ChangeDetectorRef, private dialogRef: MatDialog) { }
+  constructor(private route: ActivatedRoute, private offresService: OffresService, private candidaturesService: CandidaturesService, private cdRef: ChangeDetectorRef, private dialogRef: MatDialog, private router: Router) { }
 
   ngAfterViewInit(): void {
     console.log("ngAfterViewInit")
@@ -82,7 +82,12 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
         // console.log(imgElement)
         // if (imgElement)
         //   imgElement.src = this.imageUrl;
-      })
+      },
+        (error) => {
+          console.log(error);
+          this.router.navigate(['/']);
+        }
+      )
 
       console.log(this.offre)
 

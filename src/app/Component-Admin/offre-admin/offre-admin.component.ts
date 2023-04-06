@@ -37,7 +37,6 @@ export class OffreAdminComponent implements OnInit, AfterViewInit {
     {
       this.router.navigate(['/']);
     }
-
     console.log(this.offre);
   }
 
