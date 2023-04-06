@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalCreateQuestionComponent } from '../modal-create-question/modal-create-question.component';
 import { ModalConfirmationComponent } from 'src/app/Component-User/modal-confirmation/modal-confirmation.component';
+import { LocalService } from 'src/app/services/local.service';
 
 @Component({
   selector: 'app-create-offre',
@@ -16,7 +17,7 @@ import { ModalConfirmationComponent } from 'src/app/Component-User/modal-confirm
 })
 export class CreateOffreComponent implements OnInit {
 
-  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router, private dialog: MatDialog, private dialogRef: MatDialog) { }
+  constructor(private offresService: OffresService, private questionsService : QuestionsService, private router: Router, private dialog: MatDialog, private dialogRef: MatDialog, private localService : LocalService) { }
 
   offre: Offre = new Offre(0, '', '', new Date(), new Date(), new Date(), 0, '', '', [], [], '', true);
   newQuestion: Question = new Question(0, '');
@@ -30,7 +31,7 @@ export class CreateOffreComponent implements OnInit {
 
   ngOnInit(): void {
     
-    if (localStorage.getItem('token') === null) {
+    if (this.localService.getData('accessToken') == null) {
       this.router.navigate(['/login']);
     }
 

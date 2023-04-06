@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OffresService } from '../../services/offres.services';
 import { Candidature } from '../../models/candidature.model';
 import { CandidaturesService } from '../../services/candidatures.services';
+import { LocalService } from 'src/app/services/local.service';
 
 @Component({
   selector: 'app-offre-admin',
@@ -17,8 +18,13 @@ export class OffreAdminComponent implements OnInit, AfterViewInit {
   imageFile = new Blob();
   imageUrl = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private localService : LocalService) { }
   ngAfterViewInit(): void {
+
+    if (this.offre == null) {
+      this.router.navigate(['/admin']);
+    }
+
   if (this.offre.image != null) {
         this.imageFile = this.base64ToBlob(this.offre.image.toString());
         this.imageUrl = URL.createObjectURL(this.imageFile);
@@ -33,11 +39,14 @@ export class OffreAdminComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    if (localStorage.getItem('accessToken') == null)
-    {
-      this.router.navigate(['/']);
+    if (this.localService.getData('accessToken') == null) {
+      this.router.navigate(['/login']);
     }
     console.log(this.offre);
+    if (this.offre == null) {
+      this.router.navigate(['/admin']);
+    }
+
   }
 
   
