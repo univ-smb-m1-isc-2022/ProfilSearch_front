@@ -105,10 +105,23 @@ export class PageOffreComponent implements OnInit, AfterViewInit {
     console.log("Postuler");
     this.candidature.offre.id = this.offre.id;
 
+    if (this.candidature.name.trim() == '' || this.candidature.fname.trim() == '' || this.candidature.email.trim() == '') {
+      let message = document.getElementById('error-field');
+      if (message) message.innerHTML = 'Veuillez remplir tous les champs.';
+
+      return;
+    }
+
     this.openDialog();
     this.candidaturesService.createCandidature(this.candidature).subscribe((candidature) => {
       console.log("Candidature :: " + candidature);
-    })
+    },
+      (error) => {
+        let message = document.getElementById('error-field');
+        if (message) message.innerHTML = "Une erreur est survenue, veuillez réessayer.";
+        console.log(error);
+      }
+    )
   }
     
 openDialog(): void {

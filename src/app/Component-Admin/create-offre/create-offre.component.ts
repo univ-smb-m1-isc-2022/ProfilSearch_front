@@ -49,13 +49,25 @@ export class CreateOffreComponent implements OnInit {
     // enlever les bullet points vides
     this.offre.bullets = this.offre.bullets.filter(bullet => bullet !== '');
 
+    if (this.offre.name.trim() === '' || this.offre.description.trim() === '' || this.offre.place.trim() === '') {
+      let message = document.getElementById('error-field');
+      if (message) message.innerHTML = "Tous les champs doivent être renseignés !";
+      console.log("Tous les champs doivent être renseignés !");
+    return;
+    }
 
     console.log(this.offre)
     this.offresService.createOffre(this.offre).subscribe((offre) => {
       this.offre = offre;
-    }
+      this.openDialog();
+
+    },
+      (error) => {
+        let message = document.getElementById('error-field');
+        if (message) message.innerHTML = "Une erreur est survenue, veuillez réessayer. Attention l'image ne dois pas être trop lourde.";
+        console.log(error);
+      }
     )
-    this.openDialog();
     // this.router.navigate(['/admin']);
   }
 
